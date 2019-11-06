@@ -1,0 +1,251 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://ontology/rfc3986#"
+     xml:base="http://ontology/rfc3986"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:obda="https://w3id.org/obda/vocabulary#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://ontology/rfc3986">
+        <dc:author rdf:datatype="http://www.w3.org/2001/XMLSchema#string">t.smith:cdsrv.llc</dc:author>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.ietf.org/rfc/rfc3986.txt</rdfs:comment>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.0a</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/author -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/author"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology/HostName -->
+
+    <owl:ObjectProperty rdf:about="http://ontology/HostName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:propertyDisjointWith rdf:resource="http://ontology/PortNumber"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology/PortNumber -->
+
+    <owl:ObjectProperty rdf:about="http://ontology/PortNumber">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology/IP-literal -->
+
+    <owl:DatatypeProperty rdf:about="http://ontology/IP-literal">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontology/IPv4address -->
+
+    <owl:DatatypeProperty rdf:about="http://ontology/IPv4address">
+        <rdfs:subPropertyOf rdf:resource="http://ontology/IP-literal"/>
+        <owl:propertyDisjointWith rdf:resource="http://ontology/IPv6address"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontology/IPv6address -->
+
+    <owl:DatatypeProperty rdf:about="http://ontology/IPv6address">
+        <rdfs:subPropertyOf rdf:resource="http://ontology/IP-literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontology/dec-octet -->
+
+    <owl:DatatypeProperty rdf:about="http://ontology/dec-octet">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology/dec-octet"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#short"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#short"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontology/rfc3986#reg-name -->
+
+    <owl:DatatypeProperty rdf:about="http://ontology/rfc3986#reg-name">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology/rfc3986##URI -->
+
+    <owl:Class rdf:about="http://ontology/rfc3986##URI">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.ietf.org/rfc/rfc3986.txt</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3986##authority -->
+
+    <owl:Class rdf:about="http://ontology/rfc3986##authority">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3986##URI"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3986##fragment -->
+
+    <owl:Class rdf:about="http://ontology/rfc3986##fragment">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3986##URI"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3986##host -->
+
+    <owl:Class rdf:about="http://ontology/rfc3986##host">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3986##authority"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3986##path -->
+
+    <owl:Class rdf:about="http://ontology/rfc3986##path">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3986##URI"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3986##port -->
+
+    <owl:Class rdf:about="http://ontology/rfc3986##port">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3986##authority"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3986##query -->
+
+    <owl:Class rdf:about="http://ontology/rfc3986##query">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3986##URI"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3986##scheme -->
+
+    <owl:Class rdf:about="http://ontology/rfc3986##scheme">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3986##URI"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3986##userinfo -->
+
+    <owl:Class rdf:about="http://ontology/rfc3986##userinfo">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3986##authority"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

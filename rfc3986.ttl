@@ -1,0 +1,151 @@
+@prefix : <http://ontology/rfc3986#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obda: <https://w3id.org/obda/vocabulary#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://ontology/rfc3986> .
+
+<http://ontology/rfc3986> rdf:type owl:Ontology ;
+                           <http://purl.org/dc/elements/1.1/author> "t.smith:cdsrv.llc"^^xsd:string ;
+                           rdfs:comment "https://www.ietf.org/rfc/rfc3986.txt"^^xsd:anyURI ;
+                           owl:versionInfo "0.0a"^^xsd:string .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/author
+<http://purl.org/dc/elements/1.1/author> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://ontology/HostName
+<http://ontology/HostName> rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf owl:topObjectProperty ;
+                           owl:propertyDisjointWith <http://ontology/PortNumber> .
+
+
+###  http://ontology/PortNumber
+<http://ontology/PortNumber> rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf owl:topObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://ontology/IP-literal
+<http://ontology/IP-literal> rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://ontology/IPv4address
+<http://ontology/IPv4address> rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf <http://ontology/IP-literal> ;
+                              owl:propertyDisjointWith <http://ontology/IPv6address> .
+
+
+###  http://ontology/IPv6address
+<http://ontology/IPv6address> rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf <http://ontology/IP-literal> .
+
+
+###  http://ontology/dec-octet
+<http://ontology/dec-octet> rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf owl:topDataProperty ;
+                            rdfs:domain [ rdf:type owl:Restriction ;
+                                          owl:onProperty <http://ontology/dec-octet> ;
+                                          owl:someValuesFrom xsd:short
+                                        ] ;
+                            rdfs:range xsd:short .
+
+
+###  http://ontology/rfc3986#reg-name
+:reg-name rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://ontology/rfc3986##URI
+<http://ontology/rfc3986##URI> rdf:type owl:Class ;
+                               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                 owl:onProperty owl:topDataProperty ;
+                                                 owl:someValuesFrom xsd:anyURI
+                                               ] ;
+                               rdfs:isDefinedBy "https://www.ietf.org/rfc/rfc3986.txt"^^xsd:anyURI .
+
+
+###  http://ontology/rfc3986##authority
+<http://ontology/rfc3986##authority> rdf:type owl:Class ;
+                                     rdfs:subClassOf <http://ontology/rfc3986##URI> .
+
+
+###  http://ontology/rfc3986##fragment
+<http://ontology/rfc3986##fragment> rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://ontology/rfc3986##URI> ,
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty owl:topDataProperty ;
+                                                      owl:someValuesFrom xsd:token
+                                                    ] .
+
+
+###  http://ontology/rfc3986##host
+<http://ontology/rfc3986##host> rdf:type owl:Class ;
+                                rdfs:subClassOf <http://ontology/rfc3986##authority> ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty owl:topDataProperty ;
+                                                  owl:someValuesFrom xsd:string
+                                                ] .
+
+
+###  http://ontology/rfc3986##path
+<http://ontology/rfc3986##path> rdf:type owl:Class ;
+                                rdfs:subClassOf <http://ontology/rfc3986##URI> .
+
+
+###  http://ontology/rfc3986##port
+<http://ontology/rfc3986##port> rdf:type owl:Class ;
+                                rdfs:subClassOf <http://ontology/rfc3986##authority> ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty owl:topDataProperty ;
+                                                  owl:someValuesFrom xsd:int
+                                                ] .
+
+
+###  http://ontology/rfc3986##query
+<http://ontology/rfc3986##query> rdf:type owl:Class ;
+                                 rdfs:subClassOf <http://ontology/rfc3986##URI> ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty owl:topDataProperty ;
+                                                   owl:someValuesFrom xsd:token
+                                                 ] .
+
+
+###  http://ontology/rfc3986##scheme
+<http://ontology/rfc3986##scheme> rdf:type owl:Class ;
+                                  rdfs:subClassOf <http://ontology/rfc3986##URI> ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty owl:topDataProperty ;
+                                                    owl:someValuesFrom xsd:string
+                                                  ] .
+
+
+###  http://ontology/rfc3986##userinfo
+<http://ontology/rfc3986##userinfo> rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://ontology/rfc3986##authority> ,
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty owl:topDataProperty ;
+                                                      owl:someValuesFrom xsd:token
+                                                    ] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
