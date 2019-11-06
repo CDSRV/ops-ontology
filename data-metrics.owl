@@ -1,0 +1,256 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://ontology/data-metrics#"
+     xml:base="http://ontology/data-metrics"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:obda="https://w3id.org/obda/vocabulary#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://ontology/data-metrics">
+        <dc:author rdf:datatype="http://www.w3.org/2001/XMLSchema#string">t.smith:cdsrv.llc</dc:author>
+        <rdfs:comment>extend xsd with convertible units for bits &amp; bytes</rdfs:comment>
+        <rdfs:comment>simplified + readable version of https://bioportal.bioontology.org/ontologies/UO/</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Units_of_information</rdfs:isDefinedBy>
+        <owl:versionInfo>0.0a : rewrite of &quot;UO&quot; to avoid index-ID as property literals</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/author -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/author"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology/data-metrics#bit -->
+
+    <owl:ObjectProperty rdf:about="http://ontology/data-metrics#bit">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology/data-metrics#byte -->
+
+    <owl:ObjectProperty rdf:about="http://ontology/data-metrics#byte">
+        <rdfs:subPropertyOf rdf:resource="http://ontology/data-metrics#bit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology/data-metrics#exa -->
+
+    <owl:ObjectProperty rdf:about="http://ontology/data-metrics#exa">
+        <rdfs:subPropertyOf rdf:resource="http://ontology/data-metrics#rangeName"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology/data-metrics#giga -->
+
+    <owl:ObjectProperty rdf:about="http://ontology/data-metrics#giga">
+        <rdfs:subPropertyOf rdf:resource="http://ontology/data-metrics#rangeName"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology/data-metrics#kilo -->
+
+    <owl:ObjectProperty rdf:about="http://ontology/data-metrics#kilo">
+        <rdfs:subPropertyOf rdf:resource="http://ontology/data-metrics#rangeName"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology/data-metrics#mega -->
+
+    <owl:ObjectProperty rdf:about="http://ontology/data-metrics#mega">
+        <rdfs:subPropertyOf rdf:resource="http://ontology/data-metrics#rangeName"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology/data-metrics#peta -->
+
+    <owl:ObjectProperty rdf:about="http://ontology/data-metrics#peta">
+        <rdfs:subPropertyOf rdf:resource="http://ontology/data-metrics#rangeName"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology/data-metrics#rangeName -->
+
+    <owl:ObjectProperty rdf:about="http://ontology/data-metrics#rangeName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology/data-metrics#tera -->
+
+    <owl:ObjectProperty rdf:about="http://ontology/data-metrics#tera">
+        <rdfs:subPropertyOf rdf:resource="http://ontology/data-metrics#rangeName"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology/data-metrics#GB -->
+
+    <owl:Class rdf:about="http://ontology/data-metrics#GB">
+        <rdfs:subClassOf rdf:resource="http://ontology/data-metrics#MB"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/data-metrics#KB -->
+
+    <owl:Class rdf:about="http://ontology/data-metrics#KB">
+        <rdfs:subClassOf rdf:resource="http://ontology/data-metrics#bytes"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/data-metrics#MB -->
+
+    <owl:Class rdf:about="http://ontology/data-metrics#MB">
+        <rdfs:subClassOf rdf:resource="http://ontology/data-metrics#KB"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/data-metrics#binaryUnits -->
+
+    <owl:Class rdf:about="http://ontology/data-metrics#binaryUnits">
+        <rdfs:subClassOf rdf:resource="http://ontology/data-metrics#unitPrefix"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/data-metrics#bits -->
+
+    <owl:Class rdf:about="http://ontology/data-metrics#bits"/>
+    
+
+
+    <!-- http://ontology/data-metrics#bytes -->
+
+    <owl:Class rdf:about="http://ontology/data-metrics#bytes">
+        <rdfs:subClassOf rdf:resource="http://ontology/data-metrics#bits"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/data-metrics#kilo -->
+
+    <owl:Class rdf:about="http://ontology/data-metrics#kilo">
+        <rdfs:subClassOf rdf:resource="http://ontology/data-metrics#metricUnits"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/data-metrics#metricUnits -->
+
+    <owl:Class rdf:about="http://ontology/data-metrics#metricUnits">
+        <rdfs:subClassOf rdf:resource="http://ontology/data-metrics#unitPrefix"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/data-metrics#prefix -->
+
+    <owl:Class rdf:about="http://ontology/data-metrics#prefix"/>
+    
+
+
+    <!-- http://ontology/data-metrics#symbol -->
+
+    <owl:Class rdf:about="http://ontology/data-metrics#symbol"/>
+    
+
+
+    <!-- http://ontology/data-metrics#unit -->
+
+    <owl:Class rdf:about="http://ontology/data-metrics#unit"/>
+    
+
+
+    <!-- http://ontology/data-metrics#unitPrefix -->
+
+    <owl:Class rdf:about="http://ontology/data-metrics#unitPrefix"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topDataProperty">
+        <rdfs:comment>lots todo</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointProperties"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://ontology/data-metrics#exa"/>
+            <rdf:Description rdf:about="http://ontology/data-metrics#giga"/>
+            <rdf:Description rdf:about="http://ontology/data-metrics#kilo"/>
+            <rdf:Description rdf:about="http://ontology/data-metrics#mega"/>
+            <rdf:Description rdf:about="http://ontology/data-metrics#peta"/>
+            <rdf:Description rdf:about="http://ontology/data-metrics#tera"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
