@@ -1,0 +1,2531 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://ontology/ops#"
+     xml:base="http://ontology/ops"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ns="http://creativecommons.org/ns#"
+     xmlns:ns2="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:wot="http://xmlns.com/wot/0.1/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:core="http://purl.org/vocab/frbr/core#"
+     xmlns:doap="http://usefulinc.com/ns/doap#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:obda="https://w3id.org/obda/vocabulary#"
+     xmlns:prov="http://www.w3.org/ns/prov#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:time="http://www.w3.org/2006/time#2016#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:skos1="http://www.w3.org/2008/05/skos#"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="http://ontology/ops">
+        <owl:imports rdf:resource="http://ontology/rfc3986#"/>
+        <owl:imports rdf:resource="http://purl.dataone.org/provone/2015/01/15/ontology#"/>
+        <owl:imports rdf:resource="http://purl.oclc.org/NET/ssnx/qu/qu"/>
+        <owl:imports rdf:resource="http://purl.org/net/p-plan#"/>
+        <owl:imports rdf:resource="http://usefulinc.com/ns/doap#"/>
+        <owl:imports rdf:resource="http://www.opmw.org/ontology/"/>
+        <owl:imports rdf:resource="http://www.w3.org/2006/time#2016"/>
+        <owl:imports rdf:resource="http://www.w3.org/2008/05/skos"/>
+        <owl:imports rdf:resource="http://www.w3.org/ns/prov-o-20121211"/>
+        <dc:author rdf:datatype="http://www.w3.org/2001/XMLSchema#string">t.smith:cdsrv.llc</dc:author>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.0a</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology/ops#assembly -->
+
+    <owl:AnnotationProperty rdf:about="http://ontology/ops#assembly">
+        <rdfs:domain rdf:resource="_:genid2147484120"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology/ops#blockStorage -->
+
+    <owl:ObjectProperty rdf:about="http://ontology/ops#blockStorage">
+        <rdfs:subPropertyOf rdf:resource="http://ontology/ops#isStorage"/>
+        <rdfs:domain rdf:resource="http://ontology/ops#block"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology/ops#compileTarget -->
+
+    <owl:ObjectProperty rdf:about="http://ontology/ops#compileTarget">
+        <rdfs:domain rdf:resource="http://ontology/ops#codeType"/>
+        <rdfs:range rdf:resource="http://ontology/ops#codeType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology/ops#hasCores -->
+
+    <owl:ObjectProperty rdf:about="http://ontology/ops#hasCores">
+        <rdfs:subPropertyOf rdf:resource="http://ontology/ops#isCompute"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontology/ops#cores"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology/ops#CoreCount"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#short"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology/ops#hasInstructionSetArchitecture -->
+
+    <owl:ObjectProperty rdf:about="http://ontology/ops#hasInstructionSetArchitecture">
+        <rdfs:subPropertyOf rdf:resource="http://ontology/ops#isCompute"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology/ops#hasMemory -->
+
+    <owl:ObjectProperty rdf:about="http://ontology/ops#hasMemory">
+        <rdfs:subPropertyOf rdf:resource="http://ontology/ops#isCompute"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontology/ops#memory"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ontology/ops#MemorySize"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#short"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology/ops#inProvider -->
+
+    <owl:ObjectProperty rdf:about="http://ontology/ops#inProvider">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontology/ops#hostingProvider"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">digital infrastructure services</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology/ops#inProviderPartition -->
+
+    <owl:ObjectProperty rdf:about="http://ontology/ops#inProviderPartition">
+        <rdfs:subPropertyOf rdf:resource="http://ontology/ops#inProvider"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology/ops#inRegion -->
+
+    <owl:ObjectProperty rdf:about="http://ontology/ops#inRegion">
+        <rdfs:subPropertyOf rdf:resource="http://ontology/ops#inProviderPartition"/>
+        <rdfs:domain rdf:resource="http://ontology/ops#region"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology/ops#inZone -->
+
+    <owl:ObjectProperty rdf:about="http://ontology/ops#inZone">
+        <rdfs:subPropertyOf rdf:resource="http://ontology/ops#inRegion"/>
+        <rdfs:domain rdf:resource="http://ontology/ops#zone"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology/ops#isCompute -->
+
+    <owl:ObjectProperty rdf:about="http://ontology/ops#isCompute">
+        <rdfs:subPropertyOf rdf:resource="http://ontology/ops#providerResourceType"/>
+        <rdfs:domain rdf:resource="http://ontology/ops#compute"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology/ops#isNetwork -->
+
+    <owl:ObjectProperty rdf:about="http://ontology/ops#isNetwork">
+        <rdfs:subPropertyOf rdf:resource="http://ontology/ops#providerResourceType"/>
+        <rdfs:domain rdf:resource="http://ontology/ops#network"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology/ops#isStorage -->
+
+    <owl:ObjectProperty rdf:about="http://ontology/ops#isStorage">
+        <rdfs:subPropertyOf rdf:resource="http://ontology/ops#providerResourceType"/>
+        <rdfs:domain rdf:resource="http://ontology/ops#storage"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology/ops#networkAddress -->
+
+    <owl:ObjectProperty rdf:about="http://ontology/ops#networkAddress">
+        <rdfs:subPropertyOf rdf:resource="http://ontology/ops#isNetwork"/>
+        <rdfs:domain rdf:resource="http://ontology/ops#networkAddress"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology/ops#networkPort -->
+
+    <owl:ObjectProperty rdf:about="http://ontology/ops#networkPort">
+        <rdfs:subPropertyOf rdf:resource="http://ontology/ops#isNetwork"/>
+        <rdfs:domain rdf:resource="http://ontology/ops#port"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology/ops#networkProtocol -->
+
+    <owl:ObjectProperty rdf:about="http://ontology/ops#networkProtocol">
+        <rdfs:subPropertyOf rdf:resource="http://ontology/ops#isNetwork"/>
+        <rdfs:domain rdf:resource="http://ontology/ops#networkProtocol"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology/ops#networkRoute -->
+
+    <owl:ObjectProperty rdf:about="http://ontology/ops#networkRoute">
+        <rdfs:subPropertyOf rdf:resource="http://ontology/ops#networkRule"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology/ops#networkRule -->
+
+    <owl:ObjectProperty rdf:about="http://ontology/ops#networkRule">
+        <rdfs:subPropertyOf rdf:resource="http://ontology/ops#isNetwork"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology/ops#objectStorage -->
+
+    <owl:ObjectProperty rdf:about="http://ontology/ops#objectStorage">
+        <rdfs:subPropertyOf rdf:resource="http://ontology/ops#isStorage"/>
+        <rdfs:domain rdf:resource="http://ontology/ops#object"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology/ops#providerResourceType -->
+
+    <owl:ObjectProperty rdf:about="http://ontology/ops#providerResourceType">
+        <rdfs:subPropertyOf rdf:resource="http://ontology/ops#inProviderPartition"/>
+        <rdfs:domain rdf:resource="http://ontology/ops#providerResource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology/ops#Bandwidth -->
+
+    <owl:DatatypeProperty rdf:about="http://ontology/ops#Bandwidth">
+        <rdfs:subPropertyOf rdf:resource="http://ontology/ops#NetworkProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontology/ops#ComputePropery -->
+
+    <owl:DatatypeProperty rdf:about="http://ontology/ops#ComputePropery">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://ontology/ops#compute"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontology/ops#CoreCount -->
+
+    <owl:DatatypeProperty rdf:about="http://ontology/ops#CoreCount">
+        <rdfs:subPropertyOf rdf:resource="http://ontology/ops#ComputePropery"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontology/ops#cores"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#short"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontology/ops#LineSpeed -->
+
+    <owl:DatatypeProperty rdf:about="http://ontology/ops#LineSpeed">
+        <rdfs:subPropertyOf rdf:resource="http://ontology/ops#NetworkProperty"/>
+        <rdfs:domain rdf:resource="http://ontology/ops#networkInterface"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontology/ops#MemorySize -->
+
+    <owl:DatatypeProperty rdf:about="http://ontology/ops#MemorySize">
+        <rdfs:subPropertyOf rdf:resource="http://ontology/ops#ComputePropery"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://ontology/ops#memory"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#short"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontology/ops#NetworkProperty -->
+
+    <owl:DatatypeProperty rdf:about="http://ontology/ops#NetworkProperty">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://ontology/ops#network"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontology/ops#PartitionSize -->
+
+    <owl:DatatypeProperty rdf:about="http://ontology/ops#PartitionSize">
+        <rdfs:subPropertyOf rdf:resource="http://ontology/ops#StorageProperty"/>
+        <rdfs:domain rdf:resource="http://ontology/ops#storage"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontology/ops#StorageProperty -->
+
+    <owl:DatatypeProperty rdf:about="http://ontology/ops#StorageProperty">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://ontology/ops#storage"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontology/ops#VolumeSize -->
+
+    <owl:DatatypeProperty rdf:about="http://ontology/ops#VolumeSize">
+        <rdfs:subPropertyOf rdf:resource="http://ontology/ops#StorageProperty"/>
+        <rdfs:domain rdf:resource="http://ontology/ops#storage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology/ops#AMD -->
+
+    <owl:Class rdf:about="http://ontology/ops#AMD">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#cpuHardwareFamily"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#ARM -->
+
+    <owl:Class rdf:about="http://ontology/ops#ARM">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#InstructionSetArchitecture"/>
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#cpuHardwareFamily"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#AbstractMachine -->
+
+    <owl:Class rdf:about="http://ontology/ops#AbstractMachine">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#SoftwareUniverse"/>
+        <skos:scopeNote rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Abstract_machine</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#AbstractMachineModel -->
+
+    <owl:Class rdf:about="http://ontology/ops#AbstractMachineModel">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#ComputationModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#Algorithm -->
+
+    <owl:Class rdf:about="http://ontology/ops#Algorithm">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#SoftwareUniverse"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#AlgorithmNotation -->
+
+    <owl:Class rdf:about="http://ontology/ops#AlgorithmNotation">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#AlgorithmSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#AlgorithmSpecification -->
+
+    <owl:Class rdf:about="http://ontology/ops#AlgorithmSpecification">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#Algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#ArchitectureFeatureSet -->
+
+    <owl:Class rdf:about="http://ontology/ops#ArchitectureFeatureSet">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#InstructionSetArchitecture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#AutomataTheory -->
+
+    <owl:Class rdf:about="http://ontology/ops#AutomataTheory">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#SoftwareUniverse"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#BigEndian -->
+
+    <owl:Class rdf:about="http://ontology/ops#BigEndian">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#cpuHardwareByteOrder"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#BusArchitecture -->
+
+    <owl:Class rdf:about="http://ontology/ops#BusArchitecture">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#hardwarePlatform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#Cache -->
+
+    <owl:Class rdf:about="http://ontology/ops#Cache">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#abstractMachineComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#CallingConvention -->
+
+    <owl:Class rdf:about="http://ontology/ops#CallingConvention">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#RuntimeEnvironment"/>
+        <skos:scopeNote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is a property of cpuArchitectures</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#ChannelCapacity -->
+
+    <owl:Class rdf:about="http://ontology/ops#ChannelCapacity">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#ChannelModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#ChannelCoding -->
+
+    <owl:Class rdf:about="http://ontology/ops#ChannelCoding">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#ChannelModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#ChannelLink -->
+
+    <owl:Class rdf:about="http://ontology/ops#ChannelLink">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#ChannelModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#ChannelModel -->
+
+    <owl:Class rdf:about="http://ontology/ops#ChannelModel">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#InformationTheory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#CombinationalLogic -->
+
+    <owl:Class rdf:about="http://ontology/ops#CombinationalLogic">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#AutomataTheory"/>
+        <owl:disjointWith rdf:resource="http://ontology/ops#MemoryModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#ComputationModel -->
+
+    <owl:Class rdf:about="http://ontology/ops#ComputationModel">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#ComputationTheory"/>
+        <skos:scopeNote rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Model_of_computation</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#ComputationTheory -->
+
+    <owl:Class rdf:about="http://ontology/ops#ComputationTheory">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#SoftwareUniverse"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#ComputationalComplexity -->
+
+    <owl:Class rdf:about="http://ontology/ops#ComputationalComplexity">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#ComputationModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#ComputingArchitecture -->
+
+    <owl:Class rdf:about="http://ontology/ops#ComputingArchitecture">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#SoftwareUniverse"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#ComputingPlatform -->
+
+    <owl:Class rdf:about="http://ontology/ops#ComputingPlatform">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#SoftwareUniverse"/>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">combinations of CPU architectures and operating systems</skos:definition>
+        <skos:scopeNote rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Computing_platform</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#ControlTable -->
+
+    <owl:Class rdf:about="http://ontology/ops#ControlTable">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#AlgorithmNotation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#ControlUnit -->
+
+    <owl:Class rdf:about="http://ontology/ops#ControlUnit">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#ComputingArchitecture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#DataFlow -->
+
+    <owl:Class rdf:about="http://ontology/ops#DataFlow">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#AbstractMachine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#DecisionTreeModel -->
+
+    <owl:Class rdf:about="http://ontology/ops#DecisionTreeModel">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#ComputationModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#Deterministic -->
+
+    <owl:Class rdf:about="http://ontology/ops#Deterministic">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#FiniteState"/>
+        <owl:disjointWith rdf:resource="http://ontology/ops#Non-Deterministic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#DistributionSort -->
+
+    <owl:Class rdf:about="http://ontology/ops#DistributionSort">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#ExternalSort"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#EPT -->
+
+    <owl:Class rdf:about="http://ontology/ops#EPT">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#ArchitectureFeatureSet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#ExecutionModel -->
+
+    <owl:Class rdf:about="http://ontology/ops#ExecutionModel">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#AbstractMachine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#ExternalMemory -->
+
+    <owl:Class rdf:about="http://ontology/ops#ExternalMemory">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#abstractMachineComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#ExternalMergeSort -->
+
+    <owl:Class rdf:about="http://ontology/ops#ExternalMergeSort">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#ExternalSort"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#ExternalSort -->
+
+    <owl:Class rdf:about="http://ontology/ops#ExternalSort">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#sort"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#FIFO -->
+
+    <owl:Class rdf:about="http://ontology/ops#FIFO">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#SchedulingPolicy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#FiniteState -->
+
+    <owl:Class rdf:about="http://ontology/ops#FiniteState">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#SequentialLogic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#FormalTheory -->
+
+    <owl:Class rdf:about="http://ontology/ops#FormalTheory">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#AlgorithmSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#INPUT -->
+
+    <owl:Class rdf:about="http://ontology/ops#INPUT">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#DataFlow"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#INTEL -->
+
+    <owl:Class rdf:about="http://ontology/ops#INTEL">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#cpuHardwareFamily"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#IOMMU -->
+
+    <owl:Class rdf:about="http://ontology/ops#IOMMU">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#ArchitectureFeatureSet"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TODO: instances scoped to vendor</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#IOModel -->
+
+    <owl:Class rdf:about="http://ontology/ops#IOModel">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#AbstractMachine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#InformationTheory -->
+
+    <owl:Class rdf:about="http://ontology/ops#InformationTheory">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#SoftwareUniverse"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#InstructionSequence -->
+
+    <owl:Class rdf:about="http://ontology/ops#InstructionSequence">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#Algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#InstructionSet -->
+
+    <owl:Class rdf:about="http://ontology/ops#InstructionSet">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#abstractMachineComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#InstructionSetArchitecture -->
+
+    <owl:Class rdf:about="http://ontology/ops#InstructionSetArchitecture">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#hardwarePlatform"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Instruction_set_architecture</rdfs:isDefinedBy>
+        <skos:scopeNote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">out of ops:scope : https://en.wikipedia.org/wiki/Microarchitecture</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#KVM -->
+
+    <owl:Class rdf:about="http://ontology/ops#KVM">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#virtualizationPlatform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#LIFO -->
+
+    <owl:Class rdf:about="http://ontology/ops#LIFO">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#SchedulingPolicy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#LanguageGrammar -->
+
+    <owl:Class rdf:about="http://ontology/ops#LanguageGrammar">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#ProgrammingLanguage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#LanguageSyntax -->
+
+    <owl:Class rdf:about="http://ontology/ops#LanguageSyntax">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#ProgrammingLanguage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#Linux -->
+
+    <owl:Class rdf:about="http://ontology/ops#Linux">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#unixLike-OS"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#LittleEndian -->
+
+    <owl:Class rdf:about="http://ontology/ops#LittleEndian">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#cpuHardwareByteOrder"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#MIPS -->
+
+    <owl:Class rdf:about="http://ontology/ops#MIPS">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#InstructionSetArchitecture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#MainMemory -->
+
+    <owl:Class rdf:about="http://ontology/ops#MainMemory">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#abstractMachineComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#Map-Reduce -->
+
+    <owl:Class rdf:about="http://ontology/ops#Map-Reduce">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#ExecutionModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#MemoryModel -->
+
+    <owl:Class rdf:about="http://ontology/ops#MemoryModel">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#AbstractMachine"/>
+        <prov:todo>refine</prov:todo>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#NODE -->
+
+    <owl:Class rdf:about="http://ontology/ops#NODE">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#QueingTheory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#Non-Deterministic -->
+
+    <owl:Class rdf:about="http://ontology/ops#Non-Deterministic">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#FiniteState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#POSIX-threads -->
+
+    <owl:Class rdf:about="http://ontology/ops#POSIX-threads">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#ExecutionModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#Pipeline -->
+
+    <owl:Class rdf:about="http://ontology/ops#Pipeline">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#DataFlow"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#PowerPC -->
+
+    <owl:Class rdf:about="http://ontology/ops#PowerPC">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#InstructionSetArchitecture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#PriorityPolicy -->
+
+    <owl:Class rdf:about="http://ontology/ops#PriorityPolicy">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#SchedulingPolicy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#Processor -->
+
+    <owl:Class rdf:about="http://ontology/ops#Processor">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#abstractMachineComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#ProgramExecution -->
+
+    <owl:Class rdf:about="http://ontology/ops#ProgramExecution">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#RuntimeEnvironment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#ProgrammingLanguage -->
+
+    <owl:Class rdf:about="http://ontology/ops#ProgrammingLanguage">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#AlgorithmNotation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#ProgrammingLanguageType -->
+
+    <owl:Class rdf:about="http://ontology/ops#ProgrammingLanguageType">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#SoftwareUniverse"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#PushDown -->
+
+    <owl:Class rdf:about="http://ontology/ops#PushDown">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#SequentialLogic"/>
+        <skos:scopeNote rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">hasStack</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#QueCustomer -->
+
+    <owl:Class rdf:about="http://ontology/ops#QueCustomer">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#QueingTheory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#QueOccupancyRate -->
+
+    <owl:Class rdf:about="http://ontology/ops#QueOccupancyRate">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#QueingTheory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#QueProcessor -->
+
+    <owl:Class rdf:about="http://ontology/ops#QueProcessor">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#QueingTheory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#QueServiceTime -->
+
+    <owl:Class rdf:about="http://ontology/ops#QueServiceTime">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#QueingTheory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#QueWaitingTime -->
+
+    <owl:Class rdf:about="http://ontology/ops#QueWaitingTime">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#QueingTheory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#QueingTheory -->
+
+    <owl:Class rdf:about="http://ontology/ops#QueingTheory">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#SoftwareUniverse"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#RECEIVER -->
+
+    <owl:Class rdf:about="http://ontology/ops#RECEIVER">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#ChannelModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#Register -->
+
+    <owl:Class rdf:about="http://ontology/ops#Register">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#abstractMachineComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#RuntimeEnvironment -->
+
+    <owl:Class rdf:about="http://ontology/ops#RuntimeEnvironment">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#RuntimeSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#RuntimeSystem -->
+
+    <owl:Class rdf:about="http://ontology/ops#RuntimeSystem">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#ComputingPlatform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#SENDER -->
+
+    <owl:Class rdf:about="http://ontology/ops#SENDER">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#ChannelModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#SchedulingModel -->
+
+    <owl:Class rdf:about="http://ontology/ops#SchedulingModel">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#ExecutionModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#SchedulingPolicy -->
+
+    <owl:Class rdf:about="http://ontology/ops#SchedulingPolicy">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#QueingTheory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#SequentialLogic -->
+
+    <owl:Class rdf:about="http://ontology/ops#SequentialLogic">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#AutomataTheory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#SoftwareCompatability -->
+
+    <owl:Class rdf:about="http://ontology/ops#SoftwareCompatability">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#SoftwareUniverse"/>
+        <prov:todo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">data property : is[not]CompatibleWith</prov:todo>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#SoftwareLicense -->
+
+    <owl:Class rdf:about="http://ontology/ops#SoftwareLicense">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#SoftwareUniverse"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#SoftwareUniverse -->
+
+    <owl:Class rdf:about="http://ontology/ops#SoftwareUniverse"/>
+    
+
+
+    <!-- http://ontology/ops#Stack -->
+
+    <owl:Class rdf:about="http://ontology/ops#Stack">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#abstractMachineComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#Throughput -->
+
+    <owl:Class rdf:about="http://ontology/ops#Throughput">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#DataFlow"/>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the rate of successful message delivery over a communication channel</skos:definition>
+        <skos:scopeNote rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Throughput</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#TuringMachine -->
+
+    <owl:Class rdf:about="http://ontology/ops#TuringMachine">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#SequentialLogic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#Type1-hypervisor -->
+
+    <owl:Class rdf:about="http://ontology/ops#Type1-hypervisor">
+        <owl:equivalentClass rdf:resource="http://ontology/ops#nativeHypervisor"/>
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#hypervisorType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#Type2-hypervisor -->
+
+    <owl:Class rdf:about="http://ontology/ops#Type2-hypervisor">
+        <owl:equivalentClass rdf:resource="http://ontology/ops#hostedHypervisor"/>
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#hypervisorType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#VBOX -->
+
+    <owl:Class rdf:about="http://ontology/ops#VBOX">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#virtualizationPlatform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#XEN -->
+
+    <owl:Class rdf:about="http://ontology/ops#XEN">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#virtualizationPlatform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#abstractMachineComponent -->
+
+    <owl:Class rdf:about="http://ontology/ops#abstractMachineComponent">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#AbstractMachine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#abstractMachineImplementation -->
+
+    <owl:Class rdf:about="http://ontology/ops#abstractMachineImplementation">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#AbstractMachine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#abstractMachineInstance -->
+
+    <owl:Class rdf:about="http://ontology/ops#abstractMachineInstance">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#AbstractMachine"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#algorithmFunction -->
+
+    <owl:Class rdf:about="http://ontology/ops#algorithmFunction">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#AlgorithmSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#allow -->
+
+    <owl:Class rdf:about="http://ontology/ops#allow">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#networkRule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#arrivalRate -->
+
+    <owl:Class rdf:about="http://ontology/ops#arrivalRate">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#QueingTheory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#assembly -->
+
+    <owl:Class rdf:about="http://ontology/ops#assembly">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#ProgrammingLanguageType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#asynchronous -->
+
+    <owl:Class rdf:about="http://ontology/ops#asynchronous">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#IOModel"/>
+        <owl:disjointWith rdf:resource="http://ontology/ops#synchronous"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#block -->
+
+    <owl:Class rdf:about="http://ontology/ops#block">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#storage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#blockSize -->
+
+    <owl:Class rdf:about="http://ontology/ops#blockSize">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#MemoryModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#byteCode -->
+
+    <owl:Class rdf:about="http://ontology/ops#byteCode">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#codeType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#cache-aware -->
+
+    <owl:Class rdf:about="http://ontology/ops#cache-aware">
+        <owl:equivalentClass rdf:resource="http://ontology/ops#externalMemoryModel"/>
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#MemoryModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#cache-oblivious -->
+
+    <owl:Class rdf:about="http://ontology/ops#cache-oblivious">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#MemoryModel"/>
+        <owl:disjointWith rdf:resource="http://ontology/ops#externalMemoryModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#cacheSize -->
+
+    <owl:Class rdf:about="http://ontology/ops#cacheSize">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#externalMemoryModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#categorization -->
+
+    <owl:Class rdf:about="http://ontology/ops#categorization">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#sort"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#codeGeneration -->
+
+    <owl:Class rdf:about="http://ontology/ops#codeGeneration">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#compilerActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#codeInterpreter -->
+
+    <owl:Class rdf:about="http://ontology/ops#codeInterpreter">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#RuntimeEnvironment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#codeLexicalAnalysis -->
+
+    <owl:Class rdf:about="http://ontology/ops#codeLexicalAnalysis">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#compilerActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#codeOptimization -->
+
+    <owl:Class rdf:about="http://ontology/ops#codeOptimization">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#compilerActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#codeParsing -->
+
+    <owl:Class rdf:about="http://ontology/ops#codeParsing">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#compilerActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#codePreprocessing -->
+
+    <owl:Class rdf:about="http://ontology/ops#codePreprocessing">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#compilerActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#codeSemanticAnalysis -->
+
+    <owl:Class rdf:about="http://ontology/ops#codeSemanticAnalysis">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#compilerActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#codeTranslation -->
+
+    <owl:Class rdf:about="http://ontology/ops#codeTranslation">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#ProgramExecution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#codeType -->
+
+    <owl:Class rdf:about="http://ontology/ops#codeType">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#ProgrammingLanguage"/>
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#compileSource"/>
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#compileTarget"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#collation -->
+
+    <owl:Class rdf:about="http://ontology/ops#collation">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#sort"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#compileOptions -->
+
+    <owl:Class rdf:about="http://ontology/ops#compileOptions">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#compilerInputs"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#compileSource -->
+
+    <owl:Class rdf:about="http://ontology/ops#compileSource">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#compilerInputs"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#compileTarget -->
+
+    <owl:Class rdf:about="http://ontology/ops#compileTarget">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#compilerOutputs"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#compiled -->
+
+    <owl:Class rdf:about="http://ontology/ops#compiled">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#ProgrammingLanguageType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#compiler -->
+
+    <owl:Class rdf:about="http://ontology/ops#compiler">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#SoftwareUniverse"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#compilerActivity -->
+
+    <owl:Class rdf:about="http://ontology/ops#compilerActivity">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#compiler"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#compilerInputs -->
+
+    <owl:Class rdf:about="http://ontology/ops#compilerInputs">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#compiler"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#compilerOutputs -->
+
+    <owl:Class rdf:about="http://ontology/ops#compilerOutputs">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#compiler"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#complexity -->
+
+    <owl:Class rdf:about="http://ontology/ops#complexity">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#AlgorithmSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#compute -->
+
+    <owl:Class rdf:about="http://ontology/ops#compute">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#providerResource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#concurent -->
+
+    <owl:Class rdf:about="http://ontology/ops#concurent">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#thread"/>
+        <owl:disjointWith rdf:resource="http://ontology/ops#serialized"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#concurrent -->
+
+    <owl:Class rdf:about="http://ontology/ops#concurrent">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#ComputationModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#cores -->
+
+    <owl:Class rdf:about="http://ontology/ops#cores">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#compute"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#cpuHardwareByteOrder -->
+
+    <owl:Class rdf:about="http://ontology/ops#cpuHardwareByteOrder">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#compute"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#cpuHardwareFamily -->
+
+    <owl:Class rdf:about="http://ontology/ops#cpuHardwareFamily">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#hardwarePlatform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#cpuMode -->
+
+    <owl:Class rdf:about="http://ontology/ops#cpuMode">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#hypervisorFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#cryptoCiphers -->
+
+    <owl:Class rdf:about="http://ontology/ops#cryptoCiphers">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#cryptographic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#cryptoCodes -->
+
+    <owl:Class rdf:about="http://ontology/ops#cryptoCodes">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#cryptographic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#cryptographic -->
+
+    <owl:Class rdf:about="http://ontology/ops#cryptographic">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#Algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#data-compression -->
+
+    <owl:Class rdf:about="http://ontology/ops#data-compression">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#ChannelCoding"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#declarative -->
+
+    <owl:Class rdf:about="http://ontology/ops#declarative">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#ProgrammingLanguageType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#deny -->
+
+    <owl:Class rdf:about="http://ontology/ops#deny">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#networkRule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#departureRate -->
+
+    <owl:Class rdf:about="http://ontology/ops#departureRate">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#QueingTheory"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#InstantaneousEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#drop -->
+
+    <owl:Class rdf:about="http://ontology/ops#drop">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#networkRule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#embedded-OS -->
+
+    <owl:Class rdf:about="http://ontology/ops#embedded-OS">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#osFamily"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#emulates -->
+
+    <owl:Class rdf:about="http://ontology/ops#emulates">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#emulator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#emulator -->
+
+    <owl:Class rdf:about="http://ontology/ops#emulator">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#compute"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Emulator</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#endpointURL -->
+
+    <owl:Class rdf:about="http://ontology/ops#endpointURL">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#hostedService"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">api endpoint per partition &amp; region</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#error-correction -->
+
+    <owl:Class rdf:about="http://ontology/ops#error-correction">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#ChannelCoding"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#externalMemoryModel -->
+
+    <owl:Class rdf:about="http://ontology/ops#externalMemoryModel">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#MemoryModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#forward -->
+
+    <owl:Class rdf:about="http://ontology/ops#forward">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#networkRule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#functional -->
+
+    <owl:Class rdf:about="http://ontology/ops#functional">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#ComputationModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#hardwareInstance -->
+
+    <owl:Class rdf:about="http://ontology/ops#hardwareInstance">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#compute"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#hardwarePlatform -->
+
+    <owl:Class rdf:about="http://ontology/ops#hardwarePlatform">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#compute"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#host -->
+
+    <owl:Class rdf:about="http://ontology/ops#host">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#networkAddress"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#hostedHypervisor -->
+
+    <owl:Class rdf:about="http://ontology/ops#hostedHypervisor">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#hypervisorType"/>
+        <owl:disjointWith rdf:resource="http://ontology/ops#nativeHypervisor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#hostedService -->
+
+    <owl:Class rdf:about="http://ontology/ops#hostedService">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#hostingProvider"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#hostingModel -->
+
+    <owl:Class rdf:about="http://ontology/ops#hostingModel">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#hostingProvider"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">todo: shared some/all, on-prem, off-site, support only, licensed, etc - express in ops:responsibilities of prov:entities - ( eg, query support contact for node in config graph )</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#hostingProvider -->
+
+    <owl:Class rdf:about="http://ontology/ops#hostingProvider">
+        <prov:todo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">import class ontology+instances for each provider</prov:todo>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#hostingResponsibilities -->
+
+    <owl:Class rdf:about="http://ontology/ops#hostingResponsibilities">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#hostingModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#hypervisorFeature -->
+
+    <owl:Class rdf:about="http://ontology/ops#hypervisorFeature">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#virtualizationPlatform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#hypervisorType -->
+
+    <owl:Class rdf:about="http://ontology/ops#hypervisorType">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#virtualizationPlatform"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Hypervisor</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#imperative -->
+
+    <owl:Class rdf:about="http://ontology/ops#imperative">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#ProgrammingLanguageType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#informationCommunication -->
+
+    <owl:Class rdf:about="http://ontology/ops#informationCommunication">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#InformationTheory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#informationStorage -->
+
+    <owl:Class rdf:about="http://ontology/ops#informationStorage">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#InformationTheory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#intermediateRepresentation -->
+
+    <owl:Class rdf:about="http://ontology/ops#intermediateRepresentation">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#codeTranslation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#interpreted -->
+
+    <owl:Class rdf:about="http://ontology/ops#interpreted">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#ProgrammingLanguageType"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">interpreted languages are compiled &amp; executed without any intermediaryRepresentation</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#ip4 -->
+
+    <owl:Class rdf:about="http://ontology/ops#ip4">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#networkProtocol"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#ip6 -->
+
+    <owl:Class rdf:about="http://ontology/ops#ip6">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#networkProtocol"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#kernelDomain -->
+
+    <owl:Class rdf:about="http://ontology/ops#kernelDomain">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#compute"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#kernelInstance -->
+
+    <owl:Class rdf:about="http://ontology/ops#kernelInstance">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#kernelVersion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#kernelMode -->
+
+    <owl:Class rdf:about="http://ontology/ops#kernelMode">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#cpuMode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#kernelVersion -->
+
+    <owl:Class rdf:about="http://ontology/ops#kernelVersion">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#osInstance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#losslessCompression -->
+
+    <owl:Class rdf:about="http://ontology/ops#losslessCompression">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#data-compression"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#lossyCompression -->
+
+    <owl:Class rdf:about="http://ontology/ops#lossyCompression">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#data-compression"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#machineCode -->
+
+    <owl:Class rdf:about="http://ontology/ops#machineCode">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#codeType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#mainMemorySize -->
+
+    <owl:Class rdf:about="http://ontology/ops#mainMemorySize">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#MemoryModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#memory -->
+
+    <owl:Class rdf:about="http://ontology/ops#memory">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#compute"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#microCode -->
+
+    <owl:Class rdf:about="http://ontology/ops#microCode">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#codeType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#nativeHypervisor -->
+
+    <owl:Class rdf:about="http://ontology/ops#nativeHypervisor">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#hypervisorType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#network -->
+
+    <owl:Class rdf:about="http://ontology/ops#network">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#providerResource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#networkAddress -->
+
+    <owl:Class rdf:about="http://ontology/ops#networkAddress">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#network"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#networkInterface -->
+
+    <owl:Class rdf:about="http://ontology/ops#networkInterface">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#network"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#networkProtocol -->
+
+    <owl:Class rdf:about="http://ontology/ops#networkProtocol">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#network"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#networkRule -->
+
+    <owl:Class rdf:about="http://ontology/ops#networkRule">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#network"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#non-preemptive -->
+
+    <owl:Class rdf:about="http://ontology/ops#non-preemptive">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#PriorityPolicy"/>
+        <owl:disjointWith rdf:resource="http://ontology/ops#pre-emptive"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#object -->
+
+    <owl:Class rdf:about="http://ontology/ops#object">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#storage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#objectCode -->
+
+    <owl:Class rdf:about="http://ontology/ops#objectCode">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#codeType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#opensource -->
+
+    <owl:Class rdf:about="http://ontology/ops#opensource">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#SoftwareLicense"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#osFamily -->
+
+    <owl:Class rdf:about="http://ontology/ops#osFamily">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#SoftwareUniverse"/>
+        <skos:scopeNote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">catalog of operating systems</skos:scopeNote>
+        <prov:todo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">refactor into separate ontology</prov:todo>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#osInstance -->
+
+    <owl:Class rdf:about="http://ontology/ops#osInstance">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#compute"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#out-of-core -->
+
+    <owl:Class rdf:about="http://ontology/ops#out-of-core">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#MemoryModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#outsourcedHosting -->
+
+    <owl:Class rdf:about="http://ontology/ops#outsourcedHosting">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#hostingModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#parallelismFactor -->
+
+    <owl:Class rdf:about="http://ontology/ops#parallelismFactor">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#QueingTheory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#pipelineBuffer -->
+
+    <owl:Class rdf:about="http://ontology/ops#pipelineBuffer">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#Pipeline"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#pipelineStage -->
+
+    <owl:Class rdf:about="http://ontology/ops#pipelineStage">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#Pipeline"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#port -->
+
+    <owl:Class rdf:about="http://ontology/ops#port">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#networkAddress"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#pre-emptive -->
+
+    <owl:Class rdf:about="http://ontology/ops#pre-emptive">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#PriorityPolicy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#process -->
+
+    <owl:Class rdf:about="http://ontology/ops#process">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#SchedulingModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#processVM -->
+
+    <owl:Class rdf:about="http://ontology/ops#processVM">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#virtualMachineType"/>
+        <owl:disjointWith rdf:resource="http://ontology/ops#systemVM"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#proprietary -->
+
+    <owl:Class rdf:about="http://ontology/ops#proprietary">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#SoftwareLicense"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#providerPartition -->
+
+    <owl:Class rdf:about="http://ontology/ops#providerPartition">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#hostingProvider"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">logical globally unique datacenter</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#providerResource -->
+
+    <owl:Class rdf:about="http://ontology/ops#providerResource">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#hostingProvider"/>
+        <rdfs:comment>universally located</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#quantification -->
+
+    <owl:Class rdf:about="http://ontology/ops#quantification">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#InformationTheory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#queing -->
+
+    <owl:Class rdf:about="http://ontology/ops#queing">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#Algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#random-access -->
+
+    <owl:Class rdf:about="http://ontology/ops#random-access">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#MemoryModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#region -->
+
+    <owl:Class rdf:about="http://ontology/ops#region">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#providerPartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#runsOn -->
+
+    <owl:Class rdf:about="http://ontology/ops#runsOn">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#emulator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#selfHosting -->
+
+    <owl:Class rdf:about="http://ontology/ops#selfHosting">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#hostingModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#sequential -->
+
+    <owl:Class rdf:about="http://ontology/ops#sequential">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#ComputationModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#serialized -->
+
+    <owl:Class rdf:about="http://ontology/ops#serialized">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#thread"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#solvesProblem -->
+
+    <owl:Class rdf:about="http://ontology/ops#solvesProblem">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#AlgorithmSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#sort -->
+
+    <owl:Class rdf:about="http://ontology/ops#sort">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#Algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#sourceCode -->
+
+    <owl:Class rdf:about="http://ontology/ops#sourceCode">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#codeType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#storage -->
+
+    <owl:Class rdf:about="http://ontology/ops#storage">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#providerResource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#synchronous -->
+
+    <owl:Class rdf:about="http://ontology/ops#synchronous">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#IOModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#systemVM -->
+
+    <owl:Class rdf:about="http://ontology/ops#systemVM">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#virtualMachineType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#targetPlatform -->
+
+    <owl:Class rdf:about="http://ontology/ops#targetPlatform">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#compileTarget"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#thread -->
+
+    <owl:Class rdf:about="http://ontology/ops#thread">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#process"/>
+        <skos:scopeNote rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Thread_(computing)</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#transpose -->
+
+    <owl:Class rdf:about="http://ontology/ops#transpose">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#Algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#unixLike-OS -->
+
+    <owl:Class rdf:about="http://ontology/ops#unixLike-OS">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#osFamily"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#userMode -->
+
+    <owl:Class rdf:about="http://ontology/ops#userMode">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#cpuMode"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#userspaceInstance -->
+
+    <owl:Class rdf:about="http://ontology/ops#userspaceInstance">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#kernelVersion"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/OS-level_virtualization</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#virtualMachineType -->
+
+    <owl:Class rdf:about="http://ontology/ops#virtualMachineType">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#compute"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Virtual_machine</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#virtualizationPlatform -->
+
+    <owl:Class rdf:about="http://ontology/ops#virtualizationPlatform">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#compute"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#virtualizationRole -->
+
+    <owl:Class rdf:about="http://ontology/ops#virtualizationRole">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#virtualizationPlatform"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#vmGuest -->
+
+    <owl:Class rdf:about="http://ontology/ops#vmGuest">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#virtualizationRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#vmHost -->
+
+    <owl:Class rdf:about="http://ontology/ops#vmHost">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#virtualizationRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#vmInstance -->
+
+    <owl:Class rdf:about="http://ontology/ops#vmInstance">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#compute"/>
+        <skos:scopeNote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">class to contain literals for provisioned entities</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#x86 -->
+
+    <owl:Class rdf:about="http://ontology/ops#x86">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#INTEL"/>
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#InstructionSetArchitecture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#zone -->
+
+    <owl:Class rdf:about="http://ontology/ops#zone">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#region"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/ops#6502 -->
+
+    <owl:Class rdf:about="http://ontology/ops#6502">
+        <rdfs:subClassOf rdf:resource="http://ontology/ops#InstructionSetArchitecture"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology/ops#AMD-Vi -->
+
+    <owl:NamedIndividual rdf:about="http://ontology/ops#AMD-Vi">
+        <rdf:type rdf:resource="http://ontology/ops#AMD"/>
+        <rdf:type rdf:resource="http://ontology/ops#IOMMU"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology/ops#ARM -->
+
+    <owl:NamedIndividual rdf:about="http://ontology/ops#ARM">
+        <rdf:type rdf:resource="http://ontology/ops#InstructionSetArchitecture"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology/ops#AWS -->
+
+    <owl:NamedIndividual rdf:about="http://ontology/ops#AWS">
+        <rdf:type rdf:resource="http://ontology/ops#hostingProvider"/>
+        <inProvider rdf:resource="http://ontology/ops#AWS"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology/ops#AZURE -->
+
+    <owl:NamedIndividual rdf:about="http://ontology/ops#AZURE">
+        <rdf:type rdf:resource="http://ontology/ops#hostingProvider"/>
+        <inProvider rdf:resource="http://ontology/ops#AZURE"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology/ops#C -->
+
+    <owl:NamedIndividual rdf:about="http://ontology/ops#C">
+        <rdf:type rdf:resource="http://ontology/ops#compiled"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology/ops#ESXI -->
+
+    <owl:NamedIndividual rdf:about="http://ontology/ops#ESXI">
+        <rdf:type rdf:resource="http://ontology/ops#emulator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology/ops#GCP -->
+
+    <owl:NamedIndividual rdf:about="http://ontology/ops#GCP">
+        <rdf:type rdf:resource="http://ontology/ops#hostingProvider"/>
+        <inProvider rdf:resource="http://ontology/ops#GCP"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology/ops#Intel-VT-d -->
+
+    <owl:NamedIndividual rdf:about="http://ontology/ops#Intel-VT-d">
+        <rdf:type rdf:resource="http://ontology/ops#INTEL"/>
+        <rdf:type rdf:resource="http://ontology/ops#IOMMU"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://software.intel.com/en-us/articles/intel-virtualization-technology-for-directed-io-vt-d-enhancing-intel-platforms-for-efficient-virtualization-of-io-devices</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology/ops#MIPS -->
+
+    <owl:NamedIndividual rdf:about="http://ontology/ops#MIPS">
+        <rdf:type rdf:resource="http://ontology/ops#InstructionSetArchitecture"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology/ops#PowerPC -->
+
+    <owl:NamedIndividual rdf:about="http://ontology/ops#PowerPC">
+        <rdf:type rdf:resource="http://ontology/ops#InstructionSetArchitecture"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology/ops#QEMU -->
+
+    <owl:NamedIndividual rdf:about="http://ontology/ops#QEMU">
+        <rdf:type rdf:resource="http://ontology/ops#emulator"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/QEMU</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology/ops#VSPHERE -->
+
+    <owl:NamedIndividual rdf:about="http://ontology/ops#VSPHERE">
+        <rdf:type rdf:resource="http://ontology/ops#hostingProvider"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology/ops#XEN -->
+
+    <owl:NamedIndividual rdf:about="http://ontology/ops#XEN">
+        <rdf:type rdf:resource="http://ontology/ops#XEN"/>
+        <rdf:type rdf:resource="http://ontology/ops#emulator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology/ops#a -->
+
+    <owl:NamedIndividual rdf:about="http://ontology/ops#a">
+        <rdf:type rdf:resource="http://ontology/ops#zone"/>
+        <inProvider rdf:resource="http://ontology/ops#AWS"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology/ops#b -->
+
+    <owl:NamedIndividual rdf:about="http://ontology/ops#b">
+        <rdf:type rdf:resource="http://ontology/ops#zone"/>
+        <inProvider rdf:resource="http://ontology/ops#AWS"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology/ops#bash -->
+
+    <owl:NamedIndividual rdf:about="http://ontology/ops#bash">
+        <rdf:type rdf:resource="http://ontology/ops#interpreted"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology/ops#c -->
+
+    <owl:NamedIndividual rdf:about="http://ontology/ops#c">
+        <rdf:type rdf:resource="http://ontology/ops#zone"/>
+        <inProvider rdf:resource="http://ontology/ops#AWS"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology/ops#c5.xlarge -->
+
+    <owl:NamedIndividual rdf:about="http://ontology/ops#c5.xlarge">
+        <rdf:type rdf:resource="http://ontology/ops#compute"/>
+        <inProvider rdf:resource="http://ontology/ops#AWS"/>
+        <CoreCount rdf:datatype="http://www.w3.org/2001/XMLSchema#short">4</CoreCount>
+        <MemorySize rdf:datatype="http://www.w3.org/2001/XMLSchema#short">8</MemorySize>
+        <prov:todo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">refactor out of ops.model into provider.instance</prov:todo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology/ops#eastus -->
+
+    <owl:NamedIndividual rdf:about="http://ontology/ops#eastus">
+        <rdf:type rdf:resource="http://ontology/ops#region"/>
+        <inProvider rdf:resource="http://ontology/ops#AZURE"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology/ops#eastus2 -->
+
+    <owl:NamedIndividual rdf:about="http://ontology/ops#eastus2">
+        <rdf:type rdf:resource="http://ontology/ops#region"/>
+        <inProvider rdf:resource="http://ontology/ops#AZURE"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology/ops#java -->
+
+    <owl:NamedIndividual rdf:about="http://ontology/ops#java">
+        <rdf:type rdf:resource="http://ontology/ops#compiled"/>
+        <rdf:type rdf:resource="http://ontology/ops#processVM"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology/ops#python -->
+
+    <owl:NamedIndividual rdf:about="http://ontology/ops#python">
+        <rdf:type rdf:resource="http://ontology/ops#interpreted"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology/ops#t2.medium -->
+
+    <owl:NamedIndividual rdf:about="http://ontology/ops#t2.medium">
+        <rdf:type rdf:resource="http://ontology/ops#compute"/>
+        <inProvider rdf:resource="http://ontology/ops#AWS"/>
+        <CoreCount rdf:datatype="http://www.w3.org/2001/XMLSchema#short">2</CoreCount>
+        <MemorySize rdf:datatype="http://www.w3.org/2001/XMLSchema#short">4</MemorySize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology/ops#us-east-1 -->
+
+    <owl:NamedIndividual rdf:about="http://ontology/ops#us-east-1">
+        <rdf:type rdf:resource="http://ontology/ops#region"/>
+        <inProvider rdf:resource="http://ontology/ops#AWS"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology/ops#us-west-2 -->
+
+    <owl:NamedIndividual rdf:about="http://ontology/ops#us-west-2">
+        <rdf:type rdf:resource="http://ontology/ops#region"/>
+        <inProvider rdf:resource="http://ontology/ops#AWS"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology/ops#us-west1 -->
+
+    <owl:NamedIndividual rdf:about="http://ontology/ops#us-west1">
+        <rdf:type rdf:resource="http://ontology/ops#region"/>
+        <inProvider rdf:resource="http://ontology/ops#GCP"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology/ops#x86 -->
+
+    <owl:NamedIndividual rdf:about="http://ontology/ops#x86">
+        <rdf:type rdf:resource="http://ontology/ops#InstructionSetArchitecture"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology/ops#6502 -->
+
+    <owl:NamedIndividual rdf:about="http://ontology/ops#6502">
+        <rdf:type rdf:resource="http://ontology/ops#InstructionSetArchitecture"/>
+    </owl:NamedIndividual>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://ontology/ops#InstructionSetArchitecture"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://ontology/ops#networkAddress">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">provider:network classes to define rules</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
+        <skos:scopeNote rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ops ontology provides a system to tag data used in building, running and managing software services (devops, ops, secops, etc)</skos:scopeNote>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ops-world ontology @2019/CDSRV : GPL-3.0-only</rdfs:comment>
+        <terms:license rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.gnu.org/licenses/gpl-3.0.en.html</terms:license>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://ontology/ops#AMD"/>
+            <rdf:Description rdf:about="http://ontology/ops#ARM"/>
+            <rdf:Description rdf:about="http://ontology/ops#INTEL"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointProperties"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://ontology/ops#inProviderPartition"/>
+            <rdf:Description rdf:about="http://ontology/ops#inRegion"/>
+            <rdf:Description rdf:about="http://ontology/ops#providerResourceType"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
