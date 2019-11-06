@@ -1,0 +1,266 @@
+@prefix : <http://ontology/linux-kernel#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obda: <https://w3id.org/obda/vocabulary#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://ontology/linux-kernel> .
+
+<http://ontology/linux-kernel> rdf:type owl:Ontology ;
+                                <http://purl.org/dc/elements/1.1/author> "t.smith:cdsrv.llc"^^xsd:string ;
+                                rdfs:isDefinedBy "https://www.kernel.org/"^^xsd:anyURI ;
+                                owl:versionInfo "0.0a"^^xsd:string .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/author
+<http://purl.org/dc/elements/1.1/author> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://ontology/linux-kernel#ACCESS
+:ACCESS rdf:type owl:Class ;
+        rdfs:subClassOf :MAY .
+
+
+###  http://ontology/linux-kernel#APPEND
+:APPEND rdf:type owl:Class ;
+        rdfs:subClassOf :FLAGS ,
+                        :MAY .
+
+
+###  http://ontology/linux-kernel#ATIME
+:ATIME rdf:type owl:Class ;
+       rdfs:subClassOf :ATTR .
+
+
+###  http://ontology/linux-kernel#ATTR
+:ATTR rdf:type owl:Class ;
+      rdfs:subClassOf :DIRENT .
+
+
+###  http://ontology/linux-kernel#BLK
+:BLK rdf:type owl:Class ;
+     rdfs:subClassOf :TYPE .
+
+
+###  http://ontology/linux-kernel#CHDIR
+:CHDIR rdf:type owl:Class ;
+       rdfs:subClassOf :MAY .
+
+
+###  http://ontology/linux-kernel#CHR
+:CHR rdf:type owl:Class ;
+     rdfs:subClassOf :TYPE .
+
+
+###  http://ontology/linux-kernel#COMPRESSED
+:COMPRESSED rdf:type owl:Class ;
+            rdfs:subClassOf :FLAGS .
+
+
+###  http://ontology/linux-kernel#CTIME
+:CTIME rdf:type owl:Class ;
+       rdfs:subClassOf :ATTR .
+
+
+###  http://ontology/linux-kernel#DIR
+:DIR rdf:type owl:Class ;
+     rdfs:subClassOf :TYPE .
+
+
+###  http://ontology/linux-kernel#DIRENT
+:DIRENT rdf:type owl:Class ;
+        rdfs:subClassOf :FS ;
+        rdfs:isDefinedBy "https://github.com/torvalds/linux/blob/master/include/linux/dirent.h"^^xsd:anyURI .
+
+
+###  http://ontology/linux-kernel#ENCRYPTED
+:ENCRYPTED rdf:type owl:Class ;
+           rdfs:subClassOf :FLAGS .
+
+
+###  http://ontology/linux-kernel#EXEC
+:EXEC rdf:type owl:Class ;
+      rdfs:subClassOf :MAY .
+
+
+###  http://ontology/linux-kernel#FIFO
+:FIFO rdf:type owl:Class ;
+      rdfs:subClassOf :TYPE .
+
+
+###  http://ontology/linux-kernel#FLAGS
+:FLAGS rdf:type owl:Class ;
+       rdfs:subClassOf :DIRENT .
+
+
+###  http://ontology/linux-kernel#FS
+:FS rdf:type owl:Class ;
+    rdfs:subClassOf :KERNEL ;
+    rdfs:isDefinedBy "https://github.com/torvalds/linux/tree/master/fs"^^xsd:anyURI .
+
+
+###  http://ontology/linux-kernel#GID
+:GID rdf:type owl:Class ;
+     rdfs:subClassOf :ATTR ,
+                     :USER_NAMESPACE .
+
+
+###  http://ontology/linux-kernel#GROUP
+:GROUP rdf:type owl:Class ;
+       rdfs:subClassOf :TARGET .
+
+
+###  http://ontology/linux-kernel#IMMUTABLE
+:IMMUTABLE rdf:type owl:Class ;
+           rdfs:subClassOf :FLAGS .
+
+
+###  http://ontology/linux-kernel#KERNEL
+:KERNEL rdf:type owl:Class .
+
+
+###  http://ontology/linux-kernel#LNK
+:LNK rdf:type owl:Class ;
+     rdfs:subClassOf :TYPE .
+
+
+###  http://ontology/linux-kernel#MAY
+:MAY rdf:type owl:Class ;
+     rdfs:subClassOf :PERMISSION ;
+     rdfs:comment "https://github.com/torvalds/linux/blob/master/include/linux/fs.h"^^xsd:string .
+
+
+###  http://ontology/linux-kernel#MODE
+:MODE rdf:type owl:Class ;
+      rdfs:subClassOf :ATTR .
+
+
+###  http://ontology/linux-kernel#MOUNT
+:MOUNT rdf:type owl:Class ;
+       rdfs:subClassOf :FS .
+
+
+###  http://ontology/linux-kernel#MTIME
+:MTIME rdf:type owl:Class ;
+       rdfs:subClassOf :ATTR .
+
+
+###  http://ontology/linux-kernel#NOATIME
+:NOATIME rdf:type owl:Class ;
+         rdfs:subClassOf :OPTIONS .
+
+
+###  http://ontology/linux-kernel#NODEV
+:NODEV rdf:type owl:Class ;
+       rdfs:subClassOf :OPTIONS .
+
+
+###  http://ontology/linux-kernel#NODIRATIME
+:NODIRATIME rdf:type owl:Class ;
+            rdfs:subClassOf :OPTIONS .
+
+
+###  http://ontology/linux-kernel#NODUMP
+:NODUMP rdf:type owl:Class ;
+        rdfs:subClassOf :FLAGS .
+
+
+###  http://ontology/linux-kernel#NOEXEC
+:NOEXEC rdf:type owl:Class ;
+        rdfs:subClassOf :OPTIONS .
+
+
+###  http://ontology/linux-kernel#NOSUID
+:NOSUID rdf:type owl:Class ;
+        rdfs:subClassOf :OPTIONS .
+
+
+###  http://ontology/linux-kernel#NOT_BLOCK
+:NOT_BLOCK rdf:type owl:Class ;
+           rdfs:subClassOf :MAY .
+
+
+###  http://ontology/linux-kernel#OPTIONS
+:OPTIONS rdf:type owl:Class ;
+         rdfs:subClassOf :MOUNT ;
+         rdfs:comment "https://github.com/torvalds/linux/blob/master/fs/namespace.c"^^xsd:anyURI .
+
+
+###  http://ontology/linux-kernel#OTHER
+:OTHER rdf:type owl:Class ;
+       rdfs:subClassOf :TARGET .
+
+
+###  http://ontology/linux-kernel#PERMISSION
+:PERMISSION rdf:type owl:Class ;
+            rdfs:subClassOf :FS .
+
+
+###  http://ontology/linux-kernel#READ
+:READ rdf:type owl:Class ;
+      rdfs:subClassOf :MAY .
+
+
+###  http://ontology/linux-kernel#READONLY
+:READONLY rdf:type owl:Class ;
+          rdfs:subClassOf :OPTIONS .
+
+
+###  http://ontology/linux-kernel#SELF
+:SELF rdf:type owl:Class ;
+      rdfs:subClassOf :TARGET .
+
+
+###  http://ontology/linux-kernel#SIZE
+:SIZE rdf:type owl:Class ;
+      rdfs:subClassOf :ATTR .
+
+
+###  http://ontology/linux-kernel#SOCK
+:SOCK rdf:type owl:Class ;
+      rdfs:subClassOf :TYPE .
+
+
+###  http://ontology/linux-kernel#TARGET
+:TARGET rdf:type owl:Class ;
+        rdfs:subClassOf :PERMISSION .
+
+
+###  http://ontology/linux-kernel#TYPE
+:TYPE rdf:type owl:Class ;
+      rdfs:subClassOf :DIRENT ;
+      rdfs:comment "https://github.com/torvalds/linux/blob/master/fs/fs_types.c"^^xsd:anyURI .
+
+
+###  http://ontology/linux-kernel#UID
+:UID rdf:type owl:Class ;
+     rdfs:subClassOf :ATTR ,
+                     :USER_NAMESPACE .
+
+
+###  http://ontology/linux-kernel#UNKNOWN
+:UNKNOWN rdf:type owl:Class ;
+         rdfs:subClassOf :TYPE .
+
+
+###  http://ontology/linux-kernel#USER_NAMESPACE
+:USER_NAMESPACE rdf:type owl:Class ;
+                rdfs:subClassOf :KERNEL ;
+                rdfs:comment "https://github.com/torvalds/linux/blob/master/include/linux/uidgid.h"^^xsd:string ;
+                rdfs:isDefinedBy "https://github.com/torvalds/linux/blob/master/include/linux/user_namespace.h"^^xsd:anyURI .
+
+
+###  http://ontology/linux-kernel#WRITE
+:WRITE rdf:type owl:Class ;
+       rdfs:subClassOf :MAY .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

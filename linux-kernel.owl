@@ -1,0 +1,425 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://ontology/linux-kernel#"
+     xml:base="http://ontology/linux-kernel"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:obda="https://w3id.org/obda/vocabulary#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://ontology/linux-kernel">
+        <dc:author rdf:datatype="http://www.w3.org/2001/XMLSchema#string">t.smith:cdsrv.llc</dc:author>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.kernel.org/</rdfs:isDefinedBy>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.0a</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/author -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/author"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology/linux-kernel#ACCESS -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#ACCESS">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#MAY"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#APPEND -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#APPEND">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#FLAGS"/>
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#MAY"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#ATIME -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#ATIME">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#ATTR"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#ATTR -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#ATTR">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#DIRENT"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#BLK -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#BLK">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#TYPE"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#CHDIR -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#CHDIR">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#MAY"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#CHR -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#CHR">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#TYPE"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#COMPRESSED -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#COMPRESSED">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#FLAGS"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#CTIME -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#CTIME">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#ATTR"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#DIR -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#DIR">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#TYPE"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#DIRENT -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#DIRENT">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#FS"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/torvalds/linux/blob/master/include/linux/dirent.h</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#ENCRYPTED -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#ENCRYPTED">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#FLAGS"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#EXEC -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#EXEC">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#MAY"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#FIFO -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#FIFO">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#TYPE"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#FLAGS -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#FLAGS">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#DIRENT"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#FS -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#FS">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#KERNEL"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/torvalds/linux/tree/master/fs</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#GID -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#GID">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#ATTR"/>
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#USER_NAMESPACE"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#GROUP -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#GROUP">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#TARGET"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#IMMUTABLE -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#IMMUTABLE">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#FLAGS"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#KERNEL -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#KERNEL"/>
+    
+
+
+    <!-- http://ontology/linux-kernel#LNK -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#LNK">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#TYPE"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#MAY -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#MAY">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#PERMISSION"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/torvalds/linux/blob/master/include/linux/fs.h</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#MODE -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#MODE">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#ATTR"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#MOUNT -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#MOUNT">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#FS"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#MTIME -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#MTIME">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#ATTR"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#NOATIME -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#NOATIME">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#OPTIONS"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#NODEV -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#NODEV">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#OPTIONS"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#NODIRATIME -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#NODIRATIME">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#OPTIONS"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#NODUMP -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#NODUMP">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#FLAGS"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#NOEXEC -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#NOEXEC">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#OPTIONS"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#NOSUID -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#NOSUID">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#OPTIONS"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#NOT_BLOCK -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#NOT_BLOCK">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#MAY"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#OPTIONS -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#OPTIONS">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#MOUNT"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/torvalds/linux/blob/master/fs/namespace.c</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#OTHER -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#OTHER">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#TARGET"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#PERMISSION -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#PERMISSION">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#FS"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#READ -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#READ">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#MAY"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#READONLY -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#READONLY">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#OPTIONS"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#SELF -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#SELF">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#TARGET"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#SIZE -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#SIZE">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#ATTR"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#SOCK -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#SOCK">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#TYPE"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#TARGET -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#TARGET">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#PERMISSION"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#TYPE -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#TYPE">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#DIRENT"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/torvalds/linux/blob/master/fs/fs_types.c</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#UID -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#UID">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#ATTR"/>
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#USER_NAMESPACE"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#UNKNOWN -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#UNKNOWN">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#TYPE"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#USER_NAMESPACE -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#USER_NAMESPACE">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#KERNEL"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/torvalds/linux/blob/master/include/linux/uidgid.h</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/torvalds/linux/blob/master/include/linux/user_namespace.h</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/linux-kernel#WRITE -->
+
+    <owl:Class rdf:about="http://ontology/linux-kernel#WRITE">
+        <rdfs:subClassOf rdf:resource="http://ontology/linux-kernel#MAY"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
