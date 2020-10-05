@@ -1,0 +1,277 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="urn:absolute:$IRI_BASE/mitre-attack-matrix#"
+     xml:base="urn:absolute:$IRI_BASE/mitre-attack-matrix"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="urn:absolute:$IRI_BASE/mitre-attack-matrix">
+        <owl:versionIRI rdf:resource="urn:absolute:00b-1"/>
+        <rdfs:comment>mapping mitre attack framework to rdf primitives
+iniial version aligned with current framework semantic structure
+future version to implement framework concepts with upstream ontologies.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://attack.mitre.org/</rdfs:isDefinedBy>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- urn:absolute:$IRI_BASE/mitre-attack-matrix#mitigation -->
+
+    <owl:Class rdf:about="urn:absolute:$IRI_BASE/mitre-attack-matrix#mitigation"/>
+    
+
+
+    <!-- urn:absolute:$IRI_BASE/mitre-attack-matrix#tactic -->
+
+    <owl:Class rdf:about="urn:absolute:$IRI_BASE/mitre-attack-matrix#tactic">
+        <rdfs:comment>todo: tactics by actor, by locality</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:$IRI_BASE/mitre-attack-matrix#technique -->
+
+    <owl:Class rdf:about="urn:absolute:$IRI_BASE/mitre-attack-matrix#technique">
+        <rdfs:comment>todo: map to system operational components</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:$IRI_BASE/mitre-attack-matrix#vector -->
+
+    <owl:Class rdf:about="urn:absolute:$IRI_BASE/mitre-attack-matrix#vector">
+        <rdfs:comment>todo: map to system operational components</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- urn:absolute:$IRI_BASE/mitre-attack-matrix#collection -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:$IRI_BASE/mitre-attack-matrix#collection">
+        <rdf:type rdf:resource="urn:absolute:$IRI_BASE/mitre-attack-matrix#tactic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:$IRI_BASE/mitre-attack-matrix#command_and_control -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:$IRI_BASE/mitre-attack-matrix#command_and_control">
+        <rdf:type rdf:resource="urn:absolute:$IRI_BASE/mitre-attack-matrix#tactic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:$IRI_BASE/mitre-attack-matrix#credential_access -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:$IRI_BASE/mitre-attack-matrix#credential_access">
+        <rdf:type rdf:resource="urn:absolute:$IRI_BASE/mitre-attack-matrix#tactic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:$IRI_BASE/mitre-attack-matrix#defense_evasion -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:$IRI_BASE/mitre-attack-matrix#defense_evasion">
+        <rdf:type rdf:resource="urn:absolute:$IRI_BASE/mitre-attack-matrix#tactic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:$IRI_BASE/mitre-attack-matrix#discovery -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:$IRI_BASE/mitre-attack-matrix#discovery">
+        <rdf:type rdf:resource="urn:absolute:$IRI_BASE/mitre-attack-matrix#tactic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:$IRI_BASE/mitre-attack-matrix#drive_by_compromise -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:$IRI_BASE/mitre-attack-matrix#drive_by_compromise">
+        <rdf:type rdf:resource="urn:absolute:$IRI_BASE/mitre-attack-matrix#technique"/>
+        <rdfs:comment>todo: vectors by locality, by platform in use</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:$IRI_BASE/mitre-attack-matrix#enterprise -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:$IRI_BASE/mitre-attack-matrix#enterprise">
+        <rdf:type rdf:resource="urn:absolute:$IRI_BASE/mitre-attack-matrix#vector"/>
+        <rdfs:comment>todo: vectors by platform</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:$IRI_BASE/mitre-attack-matrix#execution -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:$IRI_BASE/mitre-attack-matrix#execution">
+        <rdf:type rdf:resource="urn:absolute:$IRI_BASE/mitre-attack-matrix#tactic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:$IRI_BASE/mitre-attack-matrix#exfiltration -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:$IRI_BASE/mitre-attack-matrix#exfiltration">
+        <rdf:type rdf:resource="urn:absolute:$IRI_BASE/mitre-attack-matrix#tactic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:$IRI_BASE/mitre-attack-matrix#exploit_public_facing_application -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:$IRI_BASE/mitre-attack-matrix#exploit_public_facing_application">
+        <rdf:type rdf:resource="urn:absolute:$IRI_BASE/mitre-attack-matrix#technique"/>
+        <rdfs:comment>todo: services by locality, by actor model</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:$IRI_BASE/mitre-attack-matrix#external_remote_services -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:$IRI_BASE/mitre-attack-matrix#external_remote_services">
+        <rdf:type rdf:resource="urn:absolute:$IRI_BASE/mitre-attack-matrix#technique"/>
+        <rdfs:comment>todo: services by locality, by actor model</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:$IRI_BASE/mitre-attack-matrix#hardware_additions -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:$IRI_BASE/mitre-attack-matrix#hardware_additions">
+        <rdf:type rdf:resource="urn:absolute:$IRI_BASE/mitre-attack-matrix#technique"/>
+        <rdfs:comment>todo: unauthorized additions, by type</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:$IRI_BASE/mitre-attack-matrix#impact -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:$IRI_BASE/mitre-attack-matrix#impact">
+        <rdf:type rdf:resource="urn:absolute:$IRI_BASE/mitre-attack-matrix#tactic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:$IRI_BASE/mitre-attack-matrix#initial_access -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:$IRI_BASE/mitre-attack-matrix#initial_access">
+        <rdf:type rdf:resource="urn:absolute:$IRI_BASE/mitre-attack-matrix#tactic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:$IRI_BASE/mitre-attack-matrix#lateral_movement -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:$IRI_BASE/mitre-attack-matrix#lateral_movement">
+        <rdf:type rdf:resource="urn:absolute:$IRI_BASE/mitre-attack-matrix#tactic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:$IRI_BASE/mitre-attack-matrix#mobile -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:$IRI_BASE/mitre-attack-matrix#mobile">
+        <rdf:type rdf:resource="urn:absolute:$IRI_BASE/mitre-attack-matrix#vector"/>
+        <rdfs:comment>todo: vectors by platform</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:$IRI_BASE/mitre-attack-matrix#persistence -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:$IRI_BASE/mitre-attack-matrix#persistence">
+        <rdf:type rdf:resource="urn:absolute:$IRI_BASE/mitre-attack-matrix#tactic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:$IRI_BASE/mitre-attack-matrix#phishing -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:$IRI_BASE/mitre-attack-matrix#phishing">
+        <rdf:type rdf:resource="urn:absolute:$IRI_BASE/mitre-attack-matrix#technique"/>
+        <rdfs:comment>todo: message delivery vector, by method type</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:$IRI_BASE/mitre-attack-matrix#privilege_escalation -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:$IRI_BASE/mitre-attack-matrix#privilege_escalation">
+        <rdf:type rdf:resource="urn:absolute:$IRI_BASE/mitre-attack-matrix#tactic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:$IRI_BASE/mitre-attack-matrix#replication_via_removable_media -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:$IRI_BASE/mitre-attack-matrix#replication_via_removable_media">
+        <rdf:type rdf:resource="urn:absolute:$IRI_BASE/mitre-attack-matrix#technique"/>
+        <rdfs:comment>todo: replication, by type</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:$IRI_BASE/mitre-attack-matrix#spearphishing_attachment -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:$IRI_BASE/mitre-attack-matrix#spearphishing_attachment">
+        <rdf:type rdf:resource="urn:absolute:$IRI_BASE/mitre-attack-matrix#technique"/>
+        <rdfs:comment>todo: message delivery vector, by method type</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:$IRI_BASE/mitre-attack-matrix#spearphishing_link -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:$IRI_BASE/mitre-attack-matrix#spearphishing_link">
+        <rdf:type rdf:resource="urn:absolute:$IRI_BASE/mitre-attack-matrix#technique"/>
+        <rdfs:comment>todo: message delivery vector, by method type</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:$IRI_BASE/mitre-attack-matrix#spearphishing_via_service -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:$IRI_BASE/mitre-attack-matrix#spearphishing_via_service">
+        <rdf:type rdf:resource="urn:absolute:$IRI_BASE/mitre-attack-matrix#technique"/>
+        <rdfs:comment>todo: message delivery vector, by method type</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:$IRI_BASE/mitre-attack-matrix#supply_chain_compromise -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:$IRI_BASE/mitre-attack-matrix#supply_chain_compromise">
+        <rdf:type rdf:resource="urn:absolute:$IRI_BASE/mitre-attack-matrix#technique"/>
+        <rdfs:comment>todo: compromise, by type</rdfs:comment>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
