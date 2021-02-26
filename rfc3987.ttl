@@ -1,0 +1,321 @@
+@prefix : <http://ontology/rfc3987#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obda: <https://w3id.org/obda/vocabulary#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://ontology/rfc3987> .
+
+<http://ontology/rfc3987> rdf:type owl:Ontology ;
+                           <http://purl.org/dc/elements/1.1/author> "t.smith:cdsrv.llc"^^xsd:string ;
+                           rdfs:comment "https://www.ietf.org/rfc/rfc3987.txt"^^xsd:anyURI ;
+                           owl:versionInfo "0.0a"^^xsd:string .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/author
+<http://purl.org/dc/elements/1.1/author> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://ontology/rfc3987#hasCharacterClass
+:hasCharacterClass rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://ontology/rfc3987#isAlpha
+:isAlpha rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:range xsd:string .
+
+
+###  http://ontology/rfc3987#isDigit
+:isDigit rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://ontology/rfc3987#isReserved
+:isReserved rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://ontology/rfc3987#isUnreserved
+:isUnreserved rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://ontology/rfc3987#ALPHA
+:ALPHA rdf:type owl:Class ;
+       rdfs:subClassOf :unreserved .
+
+
+###  http://ontology/rfc3987#DIGIT
+:DIGIT rdf:type owl:Class ;
+       rdfs:subClassOf :unreserved .
+
+
+###  http://ontology/rfc3987#IRI
+:IRI rdf:type owl:Class .
+
+
+###  http://ontology/rfc3987#ampersand
+:ampersand rdf:type owl:Class ;
+           rdfs:subClassOf :sub-delims .
+
+
+###  http://ontology/rfc3987#asterisk
+:asterisk rdf:type owl:Class ;
+          rdfs:subClassOf :sub-delims .
+
+
+###  http://ontology/rfc3987#at
+:at rdf:type owl:Class ;
+    rdfs:subClassOf :gen-delims .
+
+
+###  http://ontology/rfc3987#characterClass
+:characterClass rdf:type owl:Class ;
+                rdfs:subClassOf :IRI .
+
+
+###  http://ontology/rfc3987#colon
+:colon rdf:type owl:Class ;
+       rdfs:subClassOf :gen-delims .
+
+
+###  http://ontology/rfc3987#comma
+:comma rdf:type owl:Class ;
+       rdfs:subClassOf :sub-delims .
+
+
+###  http://ontology/rfc3987#dash
+:dash rdf:type owl:Class ;
+      rdfs:subClassOf :unreserved .
+
+
+###  http://ontology/rfc3987#dollar
+:dollar rdf:type owl:Class ;
+        rdfs:subClassOf :sub-delims .
+
+
+###  http://ontology/rfc3987#dot
+:dot rdf:type owl:Class ;
+     rdfs:subClassOf :unreserved .
+
+
+###  http://ontology/rfc3987#equals
+:equals rdf:type owl:Class ;
+        rdfs:subClassOf :sub-delims .
+
+
+###  http://ontology/rfc3987#exclamation
+:exclamation rdf:type owl:Class ;
+             rdfs:subClassOf :sub-delims .
+
+
+###  http://ontology/rfc3987#gen-delims
+:gen-delims rdf:type owl:Class ;
+            rdfs:subClassOf :reserved .
+
+
+###  http://ontology/rfc3987#hash
+:hash rdf:type owl:Class ;
+      rdfs:subClassOf :gen-delims .
+
+
+###  http://ontology/rfc3987#iauthority
+:iauthority rdf:type owl:Class ;
+            rdfs:subClassOf :ihier-part .
+
+
+###  http://ontology/rfc3987#ifragment
+:ifragment rdf:type owl:Class ;
+           rdfs:subClassOf :scheme .
+
+
+###  http://ontology/rfc3987#ihier-part
+:ihier-part rdf:type owl:Class ;
+            rdfs:subClassOf :scheme .
+
+
+###  http://ontology/rfc3987#ihost
+:ihost rdf:type owl:Class ;
+       rdfs:subClassOf :iauthority .
+
+
+###  http://ontology/rfc3987#ipath-abempty
+:ipath-abempty rdf:type owl:Class ;
+               rdfs:subClassOf :ihier-part .
+
+
+###  http://ontology/rfc3987#ipath-absolute
+:ipath-absolute rdf:type owl:Class ;
+                rdfs:subClassOf :ihier-part .
+
+
+###  http://ontology/rfc3987#ipath-empty
+:ipath-empty rdf:type owl:Class ;
+             rdfs:subClassOf :ihier-part .
+
+
+###  http://ontology/rfc3987#ipath-rootless
+:ipath-rootless rdf:type owl:Class ;
+                rdfs:subClassOf :ihier-part .
+
+
+###  http://ontology/rfc3987#ipchar
+:ipchar rdf:type owl:Class ;
+        rdfs:subClassOf :characterClass .
+
+
+###  http://ontology/rfc3987#iquery
+:iquery rdf:type owl:Class ;
+        rdfs:subClassOf :scheme .
+
+
+###  http://ontology/rfc3987#iuserinfo
+:iuserinfo rdf:type owl:Class ;
+           rdfs:subClassOf :iauthority .
+
+
+###  http://ontology/rfc3987#left-bracket
+:left-bracket rdf:type owl:Class ;
+              rdfs:subClassOf :gen-delims .
+
+
+###  http://ontology/rfc3987#left-parenthesis
+:left-parenthesis rdf:type owl:Class ;
+                  rdfs:subClassOf :sub-delims .
+
+
+###  http://ontology/rfc3987#pct-encoded
+:pct-encoded rdf:type owl:Class ;
+             rdfs:subClassOf :characterClass .
+
+
+###  http://ontology/rfc3987#plus
+:plus rdf:type owl:Class ;
+      rdfs:subClassOf :sub-delims .
+
+
+###  http://ontology/rfc3987#port
+:port rdf:type owl:Class ;
+      rdfs:subClassOf :iauthority .
+
+
+###  http://ontology/rfc3987#question
+:question rdf:type owl:Class ;
+          rdfs:subClassOf :gen-delims .
+
+
+###  http://ontology/rfc3987#reserved
+:reserved rdf:type owl:Class ;
+          rdfs:subClassOf :characterClass .
+
+
+###  http://ontology/rfc3987#right-bracket
+:right-bracket rdf:type owl:Class ;
+               rdfs:subClassOf :gen-delims .
+
+
+###  http://ontology/rfc3987#right-parenthesis
+:right-parenthesis rdf:type owl:Class ;
+                   rdfs:subClassOf :sub-delims .
+
+
+###  http://ontology/rfc3987#scheme
+:scheme rdf:type owl:Class ;
+        rdfs:subClassOf :IRI .
+
+
+###  http://ontology/rfc3987#semicolon
+:semicolon rdf:type owl:Class ;
+           rdfs:subClassOf :sub-delims .
+
+
+###  http://ontology/rfc3987#single-quote
+:single-quote rdf:type owl:Class ;
+              rdfs:subClassOf :sub-delims .
+
+
+###  http://ontology/rfc3987#slash
+:slash rdf:type owl:Class ;
+       rdfs:subClassOf :gen-delims .
+
+
+###  http://ontology/rfc3987#sub-delims
+:sub-delims rdf:type owl:Class ;
+            rdfs:subClassOf :reserved .
+
+
+###  http://ontology/rfc3987#tilde
+:tilde rdf:type owl:Class ;
+       rdfs:subClassOf :unreserved .
+
+
+###  http://ontology/rfc3987#underscore
+:underscore rdf:type owl:Class ;
+            rdfs:subClassOf :unreserved .
+
+
+###  http://ontology/rfc3987#unreserved
+:unreserved rdf:type owl:Class ;
+            rdfs:subClassOf :characterClass .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :ampersand
+                :asterisk
+                :comma
+                :dollar
+                :equals
+                :exclamation
+                :left-parenthesis
+                :plus
+                :right-parenthesis
+                :semicolon
+                :single-quote
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :at
+                :colon
+                :hash
+                :left-bracket
+                :question
+                :right-bracket
+                :slash
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointProperties ;
+  owl:members ( :isAlpha
+                :isDigit
+                :isReserved
+                :isUnreserved
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

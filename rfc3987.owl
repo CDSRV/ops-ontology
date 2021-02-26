@@ -1,0 +1,508 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://ontology/rfc3987#"
+     xml:base="http://ontology/rfc3987"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:obda="https://w3id.org/obda/vocabulary#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://ontology/rfc3987">
+        <dc:author rdf:datatype="http://www.w3.org/2001/XMLSchema#string">t.smith:cdsrv.llc</dc:author>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.ietf.org/rfc/rfc3987.txt</rdfs:comment>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.0a</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/author -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/author"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology/rfc3987#hasCharacterClass -->
+
+    <owl:ObjectProperty rdf:about="http://ontology/rfc3987#hasCharacterClass"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology/rfc3987#isAlpha -->
+
+    <owl:DatatypeProperty rdf:about="http://ontology/rfc3987#isAlpha">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontology/rfc3987#isDigit -->
+
+    <owl:DatatypeProperty rdf:about="http://ontology/rfc3987#isDigit">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontology/rfc3987#isReserved -->
+
+    <owl:DatatypeProperty rdf:about="http://ontology/rfc3987#isReserved">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontology/rfc3987#isUnreserved -->
+
+    <owl:DatatypeProperty rdf:about="http://ontology/rfc3987#isUnreserved">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology/rfc3987#ALPHA -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#ALPHA">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#unreserved"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#DIGIT -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#DIGIT">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#unreserved"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#IRI -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#IRI"/>
+    
+
+
+    <!-- http://ontology/rfc3987#ampersand -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#ampersand">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#sub-delims"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#asterisk -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#asterisk">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#sub-delims"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#at -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#at">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#gen-delims"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#characterClass -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#characterClass">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#IRI"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#colon -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#colon">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#gen-delims"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#comma -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#comma">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#sub-delims"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#dash -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#dash">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#unreserved"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#dollar -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#dollar">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#sub-delims"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#dot -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#dot">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#unreserved"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#equals -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#equals">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#sub-delims"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#exclamation -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#exclamation">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#sub-delims"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#gen-delims -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#gen-delims">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#reserved"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#hash -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#hash">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#gen-delims"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#iauthority -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#iauthority">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#ihier-part"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#ifragment -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#ifragment">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#scheme"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#ihier-part -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#ihier-part">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#scheme"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#ihost -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#ihost">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#iauthority"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#ipath-abempty -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#ipath-abempty">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#ihier-part"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#ipath-absolute -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#ipath-absolute">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#ihier-part"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#ipath-empty -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#ipath-empty">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#ihier-part"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#ipath-rootless -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#ipath-rootless">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#ihier-part"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#ipchar -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#ipchar">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#characterClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#iquery -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#iquery">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#scheme"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#iuserinfo -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#iuserinfo">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#iauthority"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#left-bracket -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#left-bracket">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#gen-delims"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#left-parenthesis -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#left-parenthesis">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#sub-delims"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#pct-encoded -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#pct-encoded">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#characterClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#plus -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#plus">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#sub-delims"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#port -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#port">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#iauthority"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#question -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#question">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#gen-delims"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#reserved -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#reserved">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#characterClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#right-bracket -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#right-bracket">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#gen-delims"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#right-parenthesis -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#right-parenthesis">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#sub-delims"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#scheme -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#scheme">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#IRI"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#semicolon -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#semicolon">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#sub-delims"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#single-quote -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#single-quote">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#sub-delims"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#slash -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#slash">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#gen-delims"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#sub-delims -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#sub-delims">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#reserved"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#tilde -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#tilde">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#unreserved"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#underscore -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#underscore">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#unreserved"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology/rfc3987#unreserved -->
+
+    <owl:Class rdf:about="http://ontology/rfc3987#unreserved">
+        <rdfs:subClassOf rdf:resource="http://ontology/rfc3987#characterClass"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://ontology/rfc3987#ampersand"/>
+            <rdf:Description rdf:about="http://ontology/rfc3987#asterisk"/>
+            <rdf:Description rdf:about="http://ontology/rfc3987#comma"/>
+            <rdf:Description rdf:about="http://ontology/rfc3987#dollar"/>
+            <rdf:Description rdf:about="http://ontology/rfc3987#equals"/>
+            <rdf:Description rdf:about="http://ontology/rfc3987#exclamation"/>
+            <rdf:Description rdf:about="http://ontology/rfc3987#left-parenthesis"/>
+            <rdf:Description rdf:about="http://ontology/rfc3987#plus"/>
+            <rdf:Description rdf:about="http://ontology/rfc3987#right-parenthesis"/>
+            <rdf:Description rdf:about="http://ontology/rfc3987#semicolon"/>
+            <rdf:Description rdf:about="http://ontology/rfc3987#single-quote"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://ontology/rfc3987#at"/>
+            <rdf:Description rdf:about="http://ontology/rfc3987#colon"/>
+            <rdf:Description rdf:about="http://ontology/rfc3987#hash"/>
+            <rdf:Description rdf:about="http://ontology/rfc3987#left-bracket"/>
+            <rdf:Description rdf:about="http://ontology/rfc3987#question"/>
+            <rdf:Description rdf:about="http://ontology/rfc3987#right-bracket"/>
+            <rdf:Description rdf:about="http://ontology/rfc3987#slash"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointProperties"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://ontology/rfc3987#isAlpha"/>
+            <rdf:Description rdf:about="http://ontology/rfc3987#isDigit"/>
+            <rdf:Description rdf:about="http://ontology/rfc3987#isReserved"/>
+            <rdf:Description rdf:about="http://ontology/rfc3987#isUnreserved"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
