@@ -1,0 +1,730 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://ontology/rfc1122"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://ontology/rfc1122">
+    <Prefix name="" IRI="http://ontology/rfc3987#"/>
+    <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="obda" IRI="https://w3id.org/obda/vocabulary#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>http://www.w3.org/ns/prov-o-20121211</Import>
+    <Import>https://w3id.org/obda/vocabulary</Import>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:author"/>
+        <Literal>t.smith:cdsrv.llc</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal>This document is one of a pair that defines and discusses the requirements for host system implementations of the Internet protocol suite.  This RFC covers the communication protocol layers:  link layer, IP layer, and transport layer.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Internet_protocol_suite</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#anyURI">https://datatracker.ietf.org/doc/html/rfc1122</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal>0.0a</Literal>
+    </Annotation>
+    <Declaration>
+        <Class abbreviatedIRI=":ARP"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":ICMP"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":IGMP"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":IP"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":SourceRoute"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":TCP"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":TOS"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":TTL"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":UDP"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":action"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":address"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":address-mask"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":application"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":broadcast"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":byte"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":checksum"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":close"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":connection"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":data"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":datagram"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":destination-unreachable"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":echo"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":error"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":fragment"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":frame"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":gateway"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":header"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":host"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":ieee802"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":information"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":interface"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":internet"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":layer"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":link"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":message"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":multicast"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":network"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":octet"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":open"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":packet"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":parameter-problem"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":path"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":port"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":protocol"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":query"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":reassemble"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":receive"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":redirect"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":role"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":route"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":segment"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":send"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":source-quench"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":subnet"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":timestamp"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":transmission"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":transport"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":unit"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":address"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":application"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":connected"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":data"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":datagram"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":defines"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":destination"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":interface"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":ip"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":layer"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":link"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":logical"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":max"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":packet"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":path"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":physical"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":protocol"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":source"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":tcp"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":transmission"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":transport"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":udp"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":unitOf"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":IPV4"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":IPV6"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":PortNumber"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":SegmentSize"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":addressFormat"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":bytes"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI=":units"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI=":INTERNET"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI=":LINK"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI=":TRANSPORT"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:author"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="obda:isCanonicalIRIOf"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.w3.org/ns/prov-o-20120724"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:title"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.w3.org/ns/prov-o#"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.w3.org/ns/prov-o"/>
+    </Declaration>
+    <SubClassOf>
+        <Class abbreviatedIRI=":ARP"/>
+        <Class abbreviatedIRI=":protocol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":ICMP"/>
+        <Class abbreviatedIRI=":IP"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":IGMP"/>
+        <Class abbreviatedIRI=":IP"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":IP"/>
+        <Class abbreviatedIRI=":protocol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":SourceRoute"/>
+        <Class abbreviatedIRI=":header"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":TCP"/>
+        <Class abbreviatedIRI=":protocol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":TOS"/>
+        <Class abbreviatedIRI=":header"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":TTL"/>
+        <Class abbreviatedIRI=":header"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":UDP"/>
+        <Class abbreviatedIRI=":protocol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":address"/>
+        <Class abbreviatedIRI=":interface"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":address-mask"/>
+        <Class abbreviatedIRI=":query"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":application"/>
+        <Class abbreviatedIRI=":layer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":broadcast"/>
+        <Class abbreviatedIRI=":address"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":byte"/>
+        <Class abbreviatedIRI=":unit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":checksum"/>
+        <Class abbreviatedIRI=":datagram"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":close"/>
+        <Class abbreviatedIRI=":action"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":data"/>
+        <Class abbreviatedIRI=":message"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":datagram"/>
+        <Class abbreviatedIRI=":IP"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":destination-unreachable"/>
+        <Class abbreviatedIRI=":error"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":echo"/>
+        <Class abbreviatedIRI=":query"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":error"/>
+        <Class abbreviatedIRI=":ICMP"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":fragment"/>
+        <Class abbreviatedIRI=":send"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":frame"/>
+        <Class abbreviatedIRI=":packet"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":gateway"/>
+        <Class abbreviatedIRI=":role"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":header"/>
+        <Class abbreviatedIRI=":message"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":host"/>
+        <Class abbreviatedIRI=":role"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":ieee802"/>
+        <Class abbreviatedIRI=":protocol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":information"/>
+        <Class abbreviatedIRI=":query"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":interface"/>
+        <Class abbreviatedIRI=":subnet"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":internet"/>
+        <Class abbreviatedIRI=":layer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":link"/>
+        <Class abbreviatedIRI=":layer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":multicast"/>
+        <Class abbreviatedIRI=":address"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":octet"/>
+        <Class abbreviatedIRI=":byte"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":open"/>
+        <Class abbreviatedIRI=":action"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":parameter-problem"/>
+        <Class abbreviatedIRI=":error"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":port"/>
+        <Class abbreviatedIRI=":address"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":query"/>
+        <Class abbreviatedIRI=":ICMP"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":reassemble"/>
+        <Class abbreviatedIRI=":receive"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":receive"/>
+        <Class abbreviatedIRI=":action"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":redirect"/>
+        <Class abbreviatedIRI=":error"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":route"/>
+        <Class abbreviatedIRI=":IGMP"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":segment"/>
+        <Class abbreviatedIRI=":TCP"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":send"/>
+        <Class abbreviatedIRI=":action"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":source-quench"/>
+        <Class abbreviatedIRI=":error"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":subnet"/>
+        <Class abbreviatedIRI=":network"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":timestamp"/>
+        <Class abbreviatedIRI=":header"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":timestamp"/>
+        <Class abbreviatedIRI=":query"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":transmission"/>
+        <Class abbreviatedIRI=":unit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":transport"/>
+        <Class abbreviatedIRI=":layer"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class abbreviatedIRI=":address-mask"/>
+        <Class abbreviatedIRI=":echo"/>
+        <Class abbreviatedIRI=":information"/>
+        <Class abbreviatedIRI=":timestamp"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI=":destination-unreachable"/>
+        <Class abbreviatedIRI=":parameter-problem"/>
+        <Class abbreviatedIRI=":redirect"/>
+        <Class abbreviatedIRI=":source-quench"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class abbreviatedIRI=":layer"/>
+        <NamedIndividual abbreviatedIRI=":INTERNET"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI=":layer"/>
+        <NamedIndividual abbreviatedIRI=":LINK"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI=":layer"/>
+        <NamedIndividual abbreviatedIRI=":TRANSPORT"/>
+    </ClassAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":application"/>
+        <ObjectProperty abbreviatedIRI=":layer"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":data"/>
+        <ObjectProperty abbreviatedIRI=":unitOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":defines"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":ip"/>
+        <ObjectProperty abbreviatedIRI=":protocol"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":link"/>
+        <ObjectProperty abbreviatedIRI=":layer"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":logical"/>
+        <ObjectProperty abbreviatedIRI=":interface"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":max"/>
+        <ObjectProperty abbreviatedIRI=":transmission"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":physical"/>
+        <ObjectProperty abbreviatedIRI=":interface"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":tcp"/>
+        <ObjectProperty abbreviatedIRI=":protocol"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":transmission"/>
+        <ObjectProperty abbreviatedIRI=":unitOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":transport"/>
+        <ObjectProperty abbreviatedIRI=":layer"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":udp"/>
+        <ObjectProperty abbreviatedIRI=":protocol"/>
+    </SubObjectPropertyOf>
+    <FunctionalObjectProperty>
+        <ObjectProperty abbreviatedIRI=":connected"/>
+    </FunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":connected"/>
+        <Class abbreviatedIRI=":role"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":ip"/>
+        <Class abbreviatedIRI=":IP"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":link"/>
+        <Class abbreviatedIRI=":frame"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":protocol"/>
+        <Class abbreviatedIRI=":TCP"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":protocol"/>
+        <Class abbreviatedIRI=":UDP"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":source"/>
+        <Class abbreviatedIRI=":role"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":connected"/>
+        <Class abbreviatedIRI=":role"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":protocol"/>
+        <Class abbreviatedIRI=":TCP"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":protocol"/>
+        <Class abbreviatedIRI=":UDP"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":source"/>
+        <Class abbreviatedIRI=":role"/>
+    </ObjectPropertyRange>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI=":ip"/>
+        <ObjectProperty abbreviatedIRI=":tcp"/>
+        <ObjectProperty abbreviatedIRI=":udp"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI=":logical"/>
+        <ObjectProperty abbreviatedIRI=":physical"/>
+    </DisjointObjectProperties>
+    <SubDataPropertyOf>
+        <DataProperty abbreviatedIRI=":IPV4"/>
+        <DataProperty abbreviatedIRI=":addressFormat"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty abbreviatedIRI=":IPV6"/>
+        <DataProperty abbreviatedIRI=":addressFormat"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty abbreviatedIRI=":PortNumber"/>
+        <DataProperty abbreviatedIRI=":units"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty abbreviatedIRI=":SegmentSize"/>
+        <DataProperty abbreviatedIRI=":units"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty abbreviatedIRI=":addressFormat"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty abbreviatedIRI=":bytes"/>
+        <DataProperty abbreviatedIRI=":units"/>
+    </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI=":addressFormat"/>
+        <Class abbreviatedIRI=":address"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":PortNumber"/>
+        <Datatype abbreviatedIRI="xsd:positiveInteger"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":PortNumber"/>
+        <Datatype abbreviatedIRI="xsd:unsignedByte"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI=":bytes"/>
+        <Datatype abbreviatedIRI="xsd:unsignedByte"/>
+    </DataPropertyRange>
+    <DisjointDataProperties>
+        <DataProperty abbreviatedIRI=":IPV4"/>
+        <DataProperty abbreviatedIRI=":IPV6"/>
+    </DisjointDataProperties>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>:TCP</AbbreviatedIRI>
+        <Literal>4.2  TRANSMISSION CONTROL PROTOCOL -- TCP
+
+      4.2.1  INTRODUCTION
+
+         The Transmission Control Protocol TCP [TCP:1] is the primary
+         virtual-circuit transport protocol for the Internet suite.  TCP
+         provides reliable, in-sequence delivery of a full-duplex stream
+         of octets (8-bit bytes).  TCP is used by those applications
+         needing reliable, connection-oriented transport service, e.g.,
+         mail (SMTP), file transfer (FTP), and virtual terminal service
+         (Telnet); requirements for these application-layer protocols
+         are described in [INTRO:1].</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>:UDP</AbbreviatedIRI>
+        <Literal>4.1  USER DATAGRAM PROTOCOL -- UDP
+
+      4.1.1  INTRODUCTION
+
+         The User Datagram Protocol UDP [UDP:1] offers only a minimal
+         transport service -- non-guaranteed datagram delivery -- and
+         gives applications direct access to the datagram service of the
+         IP layer.  UDP is used by applications that do not require the
+         level of service of TCP or that wish to use communications
+         services (e.g., multicast or broadcast delivery) not available
+         from TCP.</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

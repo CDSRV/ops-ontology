@@ -1,0 +1,549 @@
+@prefix : <http://ontology/rfc3987#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obda: <https://w3id.org/obda/vocabulary#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://ontology/rfc1122> .
+
+<http://ontology/rfc1122> rdf:type owl:Ontology ;
+                           owl:imports dc: ,
+                                       <http://www.w3.org/ns/prov-o-20121211> ,
+                                       <https://w3id.org/obda/vocabulary> ;
+                           dc:author "t.smith:cdsrv.llc"^^xsd:string ;
+                           rdfs:comment "This document is one of a pair that defines and discusses the requirements for host system implementations of the Internet protocol suite.  This RFC covers the communication protocol layers:  link layer, IP layer, and transport layer."^^xsd:string ,
+                                        "https://en.wikipedia.org/wiki/Internet_protocol_suite"^^xsd:anyURI ;
+                           rdfs:isDefinedBy "https://datatracker.ietf.org/doc/html/rfc1122"^^xsd:anyURI ;
+                           owl:versionInfo "0.0a"^^xsd:string .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/author
+dc:author rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://ontology/rfc1122#address
+:address rdf:type owl:ObjectProperty .
+
+
+###  http://ontology/rfc1122#application
+:application rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :layer .
+
+
+###  http://ontology/rfc1122#connected
+:connected rdf:type owl:ObjectProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :role ;
+           rdfs:range :role .
+
+
+###  http://ontology/rfc1122#data
+:data rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf :unitOf .
+
+
+###  http://ontology/rfc1122#datagram
+:datagram rdf:type owl:ObjectProperty .
+
+
+###  http://ontology/rfc1122#defines
+:defines rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://ontology/rfc1122#destination
+:destination rdf:type owl:ObjectProperty .
+
+
+###  http://ontology/rfc1122#interface
+:interface rdf:type owl:ObjectProperty .
+
+
+###  http://ontology/rfc1122#ip
+:ip rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf :protocol ;
+    rdfs:domain :IP .
+
+
+###  http://ontology/rfc1122#layer
+:layer rdf:type owl:ObjectProperty .
+
+
+###  http://ontology/rfc1122#link
+:link rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf :layer ;
+      rdfs:domain :frame .
+
+
+###  http://ontology/rfc1122#logical
+:logical rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :interface ;
+         owl:propertyDisjointWith :physical .
+
+
+###  http://ontology/rfc1122#max
+:max rdf:type owl:ObjectProperty ;
+     rdfs:subPropertyOf :transmission .
+
+
+###  http://ontology/rfc1122#packet
+:packet rdf:type owl:ObjectProperty .
+
+
+###  http://ontology/rfc1122#path
+:path rdf:type owl:ObjectProperty .
+
+
+###  http://ontology/rfc1122#physical
+:physical rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :interface .
+
+
+###  http://ontology/rfc1122#protocol
+:protocol rdf:type owl:ObjectProperty ;
+          rdfs:domain :TCP ,
+                      :UDP ;
+          rdfs:range :TCP ,
+                     :UDP .
+
+
+###  http://ontology/rfc1122#source
+:source rdf:type owl:ObjectProperty ;
+        rdfs:domain :role ;
+        rdfs:range :role .
+
+
+###  http://ontology/rfc1122#tcp
+:tcp rdf:type owl:ObjectProperty ;
+     rdfs:subPropertyOf :protocol .
+
+
+###  http://ontology/rfc1122#transmission
+:transmission rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :unitOf .
+
+
+###  http://ontology/rfc1122#transport
+:transport rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :layer .
+
+
+###  http://ontology/rfc1122#udp
+:udp rdf:type owl:ObjectProperty ;
+     rdfs:subPropertyOf :protocol .
+
+
+###  http://ontology/rfc1122#unitOf
+:unitOf rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://ontology/rfc1122#IPV4
+:IPV4 rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf :addressFormat ;
+      owl:propertyDisjointWith :IPV6 .
+
+
+###  http://ontology/rfc1122#IPV6
+:IPV6 rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf :addressFormat .
+
+
+###  http://ontology/rfc1122#PortNumber
+:PortNumber rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf :units ;
+            rdfs:range xsd:positiveInteger ,
+                       xsd:unsignedByte .
+
+
+###  http://ontology/rfc1122#SegmentSize
+:SegmentSize rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf :units .
+
+
+###  http://ontology/rfc1122#addressFormat
+:addressFormat rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :address .
+
+
+###  http://ontology/rfc1122#bytes
+:bytes rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf :units ;
+       rdfs:range xsd:unsignedByte .
+
+
+###  http://ontology/rfc1122#units
+:units rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://ontology/rfc1122#ARP
+:ARP rdf:type owl:Class ;
+     rdfs:subClassOf :protocol .
+
+
+###  http://ontology/rfc1122#ICMP
+:ICMP rdf:type owl:Class ;
+      rdfs:subClassOf :IP .
+
+
+###  http://ontology/rfc1122#IGMP
+:IGMP rdf:type owl:Class ;
+      rdfs:subClassOf :IP .
+
+
+###  http://ontology/rfc1122#IP
+:IP rdf:type owl:Class ;
+    rdfs:subClassOf :protocol .
+
+
+###  http://ontology/rfc1122#SourceRoute
+:SourceRoute rdf:type owl:Class ;
+             rdfs:subClassOf :header .
+
+
+###  http://ontology/rfc1122#TCP
+:TCP rdf:type owl:Class ;
+     rdfs:subClassOf :protocol ;
+     rdfs:comment """4.2  TRANSMISSION CONTROL PROTOCOL -- TCP
+
+      4.2.1  INTRODUCTION
+
+         The Transmission Control Protocol TCP [TCP:1] is the primary
+         virtual-circuit transport protocol for the Internet suite.  TCP
+         provides reliable, in-sequence delivery of a full-duplex stream
+         of octets (8-bit bytes).  TCP is used by those applications
+         needing reliable, connection-oriented transport service, e.g.,
+         mail (SMTP), file transfer (FTP), and virtual terminal service
+         (Telnet); requirements for these application-layer protocols
+         are described in [INTRO:1]."""^^xsd:string .
+
+
+###  http://ontology/rfc1122#TOS
+:TOS rdf:type owl:Class ;
+     rdfs:subClassOf :header .
+
+
+###  http://ontology/rfc1122#TTL
+:TTL rdf:type owl:Class ;
+     rdfs:subClassOf :header .
+
+
+###  http://ontology/rfc1122#UDP
+:UDP rdf:type owl:Class ;
+     rdfs:subClassOf :protocol ;
+     rdfs:comment """4.1  USER DATAGRAM PROTOCOL -- UDP
+
+      4.1.1  INTRODUCTION
+
+         The User Datagram Protocol UDP [UDP:1] offers only a minimal
+         transport service -- non-guaranteed datagram delivery -- and
+         gives applications direct access to the datagram service of the
+         IP layer.  UDP is used by applications that do not require the
+         level of service of TCP or that wish to use communications
+         services (e.g., multicast or broadcast delivery) not available
+         from TCP."""^^xsd:string .
+
+
+###  http://ontology/rfc1122#action
+:action rdf:type owl:Class .
+
+
+###  http://ontology/rfc1122#address
+:address rdf:type owl:Class ;
+         rdfs:subClassOf :interface .
+
+
+###  http://ontology/rfc1122#address-mask
+:address-mask rdf:type owl:Class ;
+              rdfs:subClassOf :query .
+
+
+###  http://ontology/rfc1122#application
+:application rdf:type owl:Class ;
+             rdfs:subClassOf :layer .
+
+
+###  http://ontology/rfc1122#broadcast
+:broadcast rdf:type owl:Class ;
+           rdfs:subClassOf :address .
+
+
+###  http://ontology/rfc1122#byte
+:byte rdf:type owl:Class ;
+      rdfs:subClassOf :unit .
+
+
+###  http://ontology/rfc1122#checksum
+:checksum rdf:type owl:Class ;
+          rdfs:subClassOf :datagram .
+
+
+###  http://ontology/rfc1122#close
+:close rdf:type owl:Class ;
+       rdfs:subClassOf :action .
+
+
+###  http://ontology/rfc1122#connection
+:connection rdf:type owl:Class .
+
+
+###  http://ontology/rfc1122#data
+:data rdf:type owl:Class ;
+      rdfs:subClassOf :message .
+
+
+###  http://ontology/rfc1122#datagram
+:datagram rdf:type owl:Class ;
+          rdfs:subClassOf :IP .
+
+
+###  http://ontology/rfc1122#destination-unreachable
+:destination-unreachable rdf:type owl:Class ;
+                         rdfs:subClassOf :error .
+
+
+###  http://ontology/rfc1122#echo
+:echo rdf:type owl:Class ;
+      rdfs:subClassOf :query .
+
+
+###  http://ontology/rfc1122#error
+:error rdf:type owl:Class ;
+       rdfs:subClassOf :ICMP .
+
+
+###  http://ontology/rfc1122#fragment
+:fragment rdf:type owl:Class ;
+          rdfs:subClassOf :send .
+
+
+###  http://ontology/rfc1122#frame
+:frame rdf:type owl:Class ;
+       rdfs:subClassOf :packet .
+
+
+###  http://ontology/rfc1122#gateway
+:gateway rdf:type owl:Class ;
+         rdfs:subClassOf :role .
+
+
+###  http://ontology/rfc1122#header
+:header rdf:type owl:Class ;
+        rdfs:subClassOf :message .
+
+
+###  http://ontology/rfc1122#host
+:host rdf:type owl:Class ;
+      rdfs:subClassOf :role .
+
+
+###  http://ontology/rfc1122#ieee802
+:ieee802 rdf:type owl:Class ;
+         rdfs:subClassOf :protocol .
+
+
+###  http://ontology/rfc1122#information
+:information rdf:type owl:Class ;
+             rdfs:subClassOf :query .
+
+
+###  http://ontology/rfc1122#interface
+:interface rdf:type owl:Class ;
+           rdfs:subClassOf :subnet .
+
+
+###  http://ontology/rfc1122#internet
+:internet rdf:type owl:Class ;
+          rdfs:subClassOf :layer .
+
+
+###  http://ontology/rfc1122#layer
+:layer rdf:type owl:Class .
+
+
+###  http://ontology/rfc1122#link
+:link rdf:type owl:Class ;
+      rdfs:subClassOf :layer .
+
+
+###  http://ontology/rfc1122#message
+:message rdf:type owl:Class .
+
+
+###  http://ontology/rfc1122#multicast
+:multicast rdf:type owl:Class ;
+           rdfs:subClassOf :address .
+
+
+###  http://ontology/rfc1122#network
+:network rdf:type owl:Class .
+
+
+###  http://ontology/rfc1122#octet
+:octet rdf:type owl:Class ;
+       rdfs:subClassOf :byte .
+
+
+###  http://ontology/rfc1122#open
+:open rdf:type owl:Class ;
+      rdfs:subClassOf :action .
+
+
+###  http://ontology/rfc1122#packet
+:packet rdf:type owl:Class .
+
+
+###  http://ontology/rfc1122#parameter-problem
+:parameter-problem rdf:type owl:Class ;
+                   rdfs:subClassOf :error .
+
+
+###  http://ontology/rfc1122#path
+:path rdf:type owl:Class .
+
+
+###  http://ontology/rfc1122#port
+:port rdf:type owl:Class ;
+      rdfs:subClassOf :address .
+
+
+###  http://ontology/rfc1122#protocol
+:protocol rdf:type owl:Class .
+
+
+###  http://ontology/rfc1122#query
+:query rdf:type owl:Class ;
+       rdfs:subClassOf :ICMP .
+
+
+###  http://ontology/rfc1122#reassemble
+:reassemble rdf:type owl:Class ;
+            rdfs:subClassOf :receive .
+
+
+###  http://ontology/rfc1122#receive
+:receive rdf:type owl:Class ;
+         rdfs:subClassOf :action .
+
+
+###  http://ontology/rfc1122#redirect
+:redirect rdf:type owl:Class ;
+          rdfs:subClassOf :error .
+
+
+###  http://ontology/rfc1122#role
+:role rdf:type owl:Class .
+
+
+###  http://ontology/rfc1122#route
+:route rdf:type owl:Class ;
+       rdfs:subClassOf :IGMP .
+
+
+###  http://ontology/rfc1122#segment
+:segment rdf:type owl:Class ;
+         rdfs:subClassOf :TCP .
+
+
+###  http://ontology/rfc1122#send
+:send rdf:type owl:Class ;
+      rdfs:subClassOf :action .
+
+
+###  http://ontology/rfc1122#source-quench
+:source-quench rdf:type owl:Class ;
+               rdfs:subClassOf :error .
+
+
+###  http://ontology/rfc1122#subnet
+:subnet rdf:type owl:Class ;
+        rdfs:subClassOf :network .
+
+
+###  http://ontology/rfc1122#timestamp
+:timestamp rdf:type owl:Class ;
+           rdfs:subClassOf :header ,
+                           :query .
+
+
+###  http://ontology/rfc1122#transmission
+:transmission rdf:type owl:Class ;
+              rdfs:subClassOf :unit .
+
+
+###  http://ontology/rfc1122#transport
+:transport rdf:type owl:Class ;
+           rdfs:subClassOf :layer .
+
+
+###  http://ontology/rfc1122#unit
+:unit rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://ontology/rfc1122#INTERNET
+:INTERNET rdf:type owl:NamedIndividual ,
+                   :layer .
+
+
+###  http://ontology/rfc1122#LINK
+:LINK rdf:type owl:NamedIndividual ,
+               :layer .
+
+
+###  http://ontology/rfc1122#TRANSPORT
+:TRANSPORT rdf:type owl:NamedIndividual ,
+                    :layer .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :address-mask
+                :echo
+                :information
+                :timestamp
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :destination-unreachable
+                :parameter-problem
+                :redirect
+                :source-quench
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointProperties ;
+  owl:members ( :ip
+                :tcp
+                :udp
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
