@@ -1,4 +1,5 @@
 @prefix : <http://ontology/data-metrics#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -8,7 +9,7 @@
 @base <http://ontology/data-metrics> .
 
 <http://ontology/data-metrics> rdf:type owl:Ontology ;
-                                <http://purl.org/dc/elements/1.1/author> "t.smith:cdsrv.llc"^^xsd:string ;
+                                dc:author "t.smith:cdsrv.llc"^^xsd:string ;
                                 rdfs:comment "extend xsd with convertible units for bits & bytes" ,
                                              "simplified + readable version of https://bioportal.bioontology.org/ontologies/UO/" ;
                                 rdfs:isDefinedBy "https://en.wikipedia.org/wiki/Units_of_information"^^xsd:anyURI ;
@@ -19,12 +20,42 @@
 #################################################################
 
 ###  http://purl.org/dc/elements/1.1/author
-<http://purl.org/dc/elements/1.1/author> rdf:type owl:AnnotationProperty .
+dc:author rdf:type owl:AnnotationProperty .
 
 
 #################################################################
 #    Object Properties
 #################################################################
+
+###  http://ontology/data-metrics#BinaryRelation
+:BinaryRelation rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :RelationType .
+
+
+###  http://ontology/data-metrics#Member
+:Member rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://ontology/data-metrics#RelationProperty
+:RelationProperty rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://ontology/data-metrics#RelationType
+:RelationType rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://ontology/data-metrics#Set
+:Set rdf:type owl:ObjectProperty ;
+     rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://ontology/data-metrics#SubSet
+:SubSet rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf :Set .
+
 
 ###  http://ontology/data-metrics#bit
 :bit rdf:type owl:ObjectProperty ;
@@ -34,6 +65,16 @@
 ###  http://ontology/data-metrics#byte
 :byte rdf:type owl:ObjectProperty ;
       rdfs:subPropertyOf :bit .
+
+
+###  http://ontology/data-metrics#divisibility
+:divisibility rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :reflexive .
+
+
+###  http://ontology/data-metrics#equality
+:equality rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :reflexive .
 
 
 ###  http://ontology/data-metrics#exa
@@ -46,6 +87,81 @@
       rdfs:subPropertyOf :rangeName .
 
 
+###  http://ontology/data-metrics#hasDimension
+:hasDimension rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://ontology/data-metrics#hasDuration
+:hasDuration rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://ontology/data-metrics#hasNotationSystem
+:hasNotationSystem rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://ontology/data-metrics#hasNumericSystem
+:hasNumericSystem rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://ontology/data-metrics#hasQuantity
+:hasQuantity rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://ontology/data-metrics#hasSize
+:hasSize rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://ontology/data-metrics#inclusion
+:inclusion rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :reflexive .
+
+
+###  http://ontology/data-metrics#irreflexive
+:irreflexive rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :RelationProperty .
+
+
+###  http://ontology/data-metrics#isCoprimeTo
+:isCoprimeTo rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :irreflexive .
+
+
+###  http://ontology/data-metrics#isFunction
+:isFunction rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :BinaryRelation .
+
+
+###  http://ontology/data-metrics#isGreaterThan
+:isGreaterThan rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :irreflexive .
+
+
+###  http://ontology/data-metrics#isGreaterThanOrEqualTo
+:isGreaterThanOrEqualTo rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf :reflexive .
+
+
+###  http://ontology/data-metrics#isLessThan
+:isLessThan rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :irreflexive .
+
+
+###  http://ontology/data-metrics#isLessThanOrEqualTo
+:isLessThanOrEqualTo rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :reflexive .
+
+
+###  http://ontology/data-metrics#isProperSubsetOf
+:isProperSubsetOf rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :irreflexive .
+
+
 ###  http://ontology/data-metrics#kilo
 :kilo rdf:type owl:ObjectProperty ;
       rdfs:subPropertyOf :rangeName .
@@ -54,6 +170,11 @@
 ###  http://ontology/data-metrics#mega
 :mega rdf:type owl:ObjectProperty ;
       rdfs:subPropertyOf :rangeName .
+
+
+###  http://ontology/data-metrics#notEqualTo
+:notEqualTo rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :irreflexive .
 
 
 ###  http://ontology/data-metrics#peta
@@ -66,37 +187,293 @@
            rdfs:subPropertyOf owl:topObjectProperty .
 
 
+###  http://ontology/data-metrics#reflexive
+:reflexive rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :RelationProperty .
+
+
+###  http://ontology/data-metrics#symmetric
+:symmetric rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :RelationProperty .
+
+
 ###  http://ontology/data-metrics#tera
 :tera rdf:type owl:ObjectProperty ;
       rdfs:subPropertyOf :rangeName .
+
+
+###  http://ontology/data-metrics#transitive
+:transitive rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :RelationProperty .
 
 
 #################################################################
 #    Classes
 #################################################################
 
-###  http://ontology/data-metrics#GB
-:GB rdf:type owl:Class ;
-    rdfs:subClassOf :MB .
+###  http://ontology/data-metrics#Addition
+:Addition rdf:type owl:Class ;
+          rdfs:subClassOf :Binary .
 
 
-###  http://ontology/data-metrics#KB
-:KB rdf:type owl:Class ;
-    rdfs:subClassOf :bytes .
+###  http://ontology/data-metrics#Alpha
+:Alpha rdf:type owl:Class ;
+       rdfs:subClassOf :ValueType .
 
 
-###  http://ontology/data-metrics#MB
-:MB rdf:type owl:Class ;
-    rdfs:subClassOf :KB .
+###  http://ontology/data-metrics#And
+:And rdf:type owl:Class ;
+     rdfs:subClassOf :Logic .
 
 
-###  http://ontology/data-metrics#binaryUnits
-:binaryUnits rdf:type owl:Class ;
-             rdfs:subClassOf :unitPrefix .
+###  http://ontology/data-metrics#Binary
+:Binary rdf:type owl:Class ;
+        rdfs:subClassOf :Operation .
+
+
+###  http://ontology/data-metrics#BinaryRelation
+:BinaryRelation rdf:type owl:Class ;
+                rdfs:subClassOf :Relation .
+
+
+###  http://ontology/data-metrics#Complement
+:Complement rdf:type owl:Class ;
+            rdfs:subClassOf :Binary .
+
+
+###  http://ontology/data-metrics#Composition
+:Composition rdf:type owl:Class ;
+             rdfs:subClassOf :Binary .
+
+
+###  http://ontology/data-metrics#Converse
+:Converse rdf:type owl:Class ;
+          rdfs:subClassOf :Binary .
+
+
+###  http://ontology/data-metrics#Count
+:Count rdf:type owl:Class ;
+       rdfs:comment "https://en.wikipedia.org/wiki/Cardinality"^^xsd:anyURI .
+
+
+###  http://ontology/data-metrics#Division
+:Division rdf:type owl:Class ;
+          rdfs:subClassOf :Binary .
+
+
+###  http://ontology/data-metrics#Element
+:Element rdf:type owl:Class ;
+         rdfs:subClassOf :Set .
+
+
+###  http://ontology/data-metrics#EqualTo
+:EqualTo rdf:type owl:Class ;
+         rdfs:subClassOf :Relation .
+
+
+###  http://ontology/data-metrics#Exponentiation
+:Exponentiation rdf:type owl:Class ;
+                rdfs:subClassOf :Binary .
+
+
+###  http://ontology/data-metrics#False
+:False rdf:type owl:Class ;
+       rdfs:subClassOf :Logical .
+
+
+###  http://ontology/data-metrics#Function
+:Function rdf:type owl:Class .
+
+
+###  http://ontology/data-metrics#GreaterThan
+:GreaterThan rdf:type owl:Class ;
+             rdfs:subClassOf :Relation .
+
+
+###  http://ontology/data-metrics#Integer
+:Integer rdf:type owl:Class ;
+         rdfs:subClassOf :Rational .
+
+
+###  http://ontology/data-metrics#Intersection
+:Intersection rdf:type owl:Class ;
+              rdfs:subClassOf :Binary .
+
+
+###  http://ontology/data-metrics#Irrational
+:Irrational rdf:type owl:Class ;
+            rdfs:subClassOf :Real ;
+            owl:disjointWith :Rational .
+
+
+###  http://ontology/data-metrics#LessThan
+:LessThan rdf:type owl:Class ;
+          rdfs:subClassOf :Relation .
+
+
+###  http://ontology/data-metrics#Logic
+:Logic rdf:type owl:Class ;
+       rdfs:subClassOf :Operation .
+
+
+###  http://ontology/data-metrics#Logical
+:Logical rdf:type owl:Class ;
+         rdfs:subClassOf :ValueType .
+
+
+###  http://ontology/data-metrics#Member
+:Member rdf:type owl:Class ;
+        rdfs:subClassOf :Set .
+
+
+###  http://ontology/data-metrics#Multiplication
+:Multiplication rdf:type owl:Class ;
+                rdfs:subClassOf :Binary .
+
+
+###  http://ontology/data-metrics#Natural
+:Natural rdf:type owl:Class ;
+         rdfs:subClassOf :Whole .
+
+
+###  http://ontology/data-metrics#Not
+:Not rdf:type owl:Class ;
+     rdfs:subClassOf :Logic .
+
+
+###  http://ontology/data-metrics#NotationPrefix
+:NotationPrefix rdf:type owl:Class .
+
+
+###  http://ontology/data-metrics#NotationSystem
+:NotationSystem rdf:type owl:Class ;
+                rdfs:comment "https://en.wikipedia.org/wiki/Positional_notation"^^xsd:anyURI .
+
+
+###  http://ontology/data-metrics#NumberType
+:NumberType rdf:type owl:Class .
+
+
+###  http://ontology/data-metrics#NumeralSystem
+:NumeralSystem rdf:type owl:Class ;
+               rdfs:comment "https://en.wikipedia.org/wiki/Numeral_system"^^xsd:anyURI .
+
+
+###  http://ontology/data-metrics#Numeric
+:Numeric rdf:type owl:Class ;
+         rdfs:subClassOf :ValueType .
+
+
+###  http://ontology/data-metrics#Operand
+:Operand rdf:type owl:Class .
+
+
+###  http://ontology/data-metrics#Operation
+:Operation rdf:type owl:Class ;
+           rdfs:comment "https://en.wikipedia.org/wiki/Operation_(mathematics)"^^xsd:anyURI .
+
+
+###  http://ontology/data-metrics#Operator
+:Operator rdf:type owl:Class .
+
+
+###  http://ontology/data-metrics#Or
+:Or rdf:type owl:Class ;
+    rdfs:subClassOf :Logic .
+
+
+###  http://ontology/data-metrics#PositionalNotation
+:PositionalNotation rdf:type owl:Class ;
+                    rdfs:subClassOf :NotationSystem .
+
+
+###  http://ontology/data-metrics#Quantity
+:Quantity rdf:type owl:Class ;
+          rdfs:subClassOf :numerical .
+
+
+###  http://ontology/data-metrics#Rational
+:Rational rdf:type owl:Class ;
+          rdfs:subClassOf :Real .
+
+
+###  http://ontology/data-metrics#Real
+:Real rdf:type owl:Class ;
+      rdfs:subClassOf :NumberType .
+
+
+###  http://ontology/data-metrics#Relation
+:Relation rdf:type owl:Class .
+
+
+###  http://ontology/data-metrics#Restriction
+:Restriction rdf:type owl:Class ;
+             rdfs:subClassOf :Binary .
+
+
+###  http://ontology/data-metrics#Set
+:Set rdf:type owl:Class .
+
+
+###  http://ontology/data-metrics#Size
+:Size rdf:type owl:Class ;
+      rdfs:subClassOf :numerical .
+
+
+###  http://ontology/data-metrics#Subtraction
+:Subtraction rdf:type owl:Class ;
+             rdfs:subClassOf :Binary .
+
+
+###  http://ontology/data-metrics#Symbol
+:Symbol rdf:type owl:Class .
+
+
+###  http://ontology/data-metrics#Symbolic
+:Symbolic rdf:type owl:Class ;
+          rdfs:subClassOf :ValueType .
+
+
+###  http://ontology/data-metrics#True
+:True rdf:type owl:Class ;
+      rdfs:subClassOf :Logical .
+
+
+###  http://ontology/data-metrics#Unary
+:Unary rdf:type owl:Class ;
+       rdfs:subClassOf :Operation .
+
+
+###  http://ontology/data-metrics#Union
+:Union rdf:type owl:Class ;
+       rdfs:subClassOf :Binary .
+
+
+###  http://ontology/data-metrics#UnitSystem
+:UnitSystem rdf:type owl:Class .
+
+
+###  http://ontology/data-metrics#Value
+:Value rdf:type owl:Class .
+
+
+###  http://ontology/data-metrics#ValueType
+:ValueType rdf:type owl:Class .
+
+
+###  http://ontology/data-metrics#Whole
+:Whole rdf:type owl:Class ;
+       rdfs:subClassOf :Rational .
+
+
+###  http://ontology/data-metrics#base
+:base rdf:type owl:Class ;
+      rdfs:subClassOf :NumeralSystem .
 
 
 ###  http://ontology/data-metrics#bits
-:bits rdf:type owl:Class .
+:bits rdf:type owl:Class ;
+      rdfs:subClassOf :information .
 
 
 ###  http://ontology/data-metrics#bytes
@@ -104,35 +481,124 @@
        rdfs:subClassOf :bits .
 
 
-###  http://ontology/data-metrics#kilo
-:kilo rdf:type owl:Class ;
-      rdfs:subClassOf :metricUnits .
+###  http://ontology/data-metrics#character
+:character rdf:type owl:Class ;
+           rdfs:subClassOf :Symbol .
 
 
-###  http://ontology/data-metrics#metricUnits
-:metricUnits rdf:type owl:Class ;
-             rdfs:subClassOf :unitPrefix .
+###  http://ontology/data-metrics#day
+:day rdf:type owl:Class ;
+     rdfs:subClassOf :hour .
 
 
-###  http://ontology/data-metrics#prefix
-:prefix rdf:type owl:Class .
+###  http://ontology/data-metrics#digit
+:digit rdf:type owl:Class ;
+       rdfs:subClassOf :PositionalNotation .
 
 
-###  http://ontology/data-metrics#symbol
-:symbol rdf:type owl:Class .
+###  http://ontology/data-metrics#dimension
+:dimension rdf:type owl:Class ;
+           rdfs:subClassOf :space .
 
 
-###  http://ontology/data-metrics#unit
-:unit rdf:type owl:Class .
+###  http://ontology/data-metrics#glyph
+:glyph rdf:type owl:Class ;
+       rdfs:subClassOf :Symbol .
 
 
-###  http://ontology/data-metrics#unitPrefix
-:unitPrefix rdf:type owl:Class .
+###  http://ontology/data-metrics#hour
+:hour rdf:type owl:Class ;
+      rdfs:subClassOf :minute .
+
+
+###  http://ontology/data-metrics#index
+:index rdf:type owl:Class ;
+       rdfs:subClassOf :PositionalNotation .
+
+
+###  http://ontology/data-metrics#information
+:information rdf:type owl:Class ;
+             rdfs:subClassOf :unitType .
+
+
+###  http://ontology/data-metrics#minute
+:minute rdf:type owl:Class ;
+        rdfs:subClassOf :second .
+
+
+###  http://ontology/data-metrics#month
+:month rdf:type owl:Class ;
+       rdfs:subClassOf :day .
+
+
+###  http://ontology/data-metrics#negative
+:negative rdf:type owl:Class ;
+          rdfs:subClassOf :Integer .
+
+
+###  http://ontology/data-metrics#numerical
+:numerical rdf:type owl:Class ;
+           rdfs:subClassOf :unitType .
+
+
+###  http://ontology/data-metrics#position
+:position rdf:type owl:Class ;
+          rdfs:subClassOf :PositionalNotation .
+
+
+###  http://ontology/data-metrics#positive
+:positive rdf:type owl:Class ;
+          rdfs:subClassOf :Integer .
+
+
+###  http://ontology/data-metrics#radix
+:radix rdf:type owl:Class ;
+       rdfs:subClassOf :NumeralSystem .
+
+
+###  http://ontology/data-metrics#second
+:second rdf:type owl:Class ;
+        rdfs:subClassOf :time .
+
+
+###  http://ontology/data-metrics#space
+:space rdf:type owl:Class ;
+       rdfs:subClassOf :unitType .
+
+
+###  http://ontology/data-metrics#time
+:time rdf:type owl:Class ;
+      rdfs:subClassOf :unitType .
+
+
+###  http://ontology/data-metrics#unitType
+:unitType rdf:type owl:Class .
+
+
+###  http://ontology/data-metrics#volume
+:volume rdf:type owl:Class ;
+        rdfs:subClassOf :space .
+
+
+###  http://ontology/data-metrics#year
+:year rdf:type owl:Class ;
+      rdfs:subClassOf :month .
+
+
+###  http://ontology/data-metrics#zero
+:zero rdf:type owl:Class ;
+      rdfs:subClassOf :Whole .
 
 
 #################################################################
 #    Annotations
 #################################################################
+
+:BinaryRelation rdfs:comment "https://en.wikipedia.org/wiki/Binary_relation"^^xsd:anyURI .
+
+
+:Set rdfs:comment "https://en.wikipedia.org/wiki/Set_(mathematics)"^^xsd:anyURI .
+
 
 owl:topDataProperty rdfs:comment "lots todo" .
 
@@ -140,6 +606,16 @@ owl:topDataProperty rdfs:comment "lots todo" .
 #################################################################
 #    General axioms
 #################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Addition
+                :Division
+                :Exponentiation
+                :Multiplication
+                :Subtraction
+              )
+] .
+
 
 [ rdf:type owl:AllDisjointProperties ;
   owl:members ( :exa
